@@ -11,28 +11,28 @@ export const ArchitectureStage: React.FC<ArchitectureStageProps> = ({ isFlooded 
 
   const pillars = [
     {
-      id: 'web',
+      id: 'Data Analyst',
       icon: <Code2 className="w-5 h-5 text-[#0284c7]" />,
-      title: 'Fullstack Web Development',
-      subtitle: 'Laravel Monolith & Modern React Ecosystem',
-      desc: 'Membangun aplikasi web end-to-end dengan backend Laravel / Node.js dan frontend modern React, Next.js, serta TypeScript. Terbiasa mengelola pemodelan database relasional, optimasi query SQL, integrasi REST API, dan antarmuka reaktif yang responsif.',
-      tags: ['Laravel', 'Inertia.js', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'MySQL', 'Tailwind CSS']
+      title: 'Data Analyst',
+      subtitle: 'Data Analysis & Dashboard Development',
+      desc: 'Mengumpulkan, membersihkan, dan memvalidasi data, lalu memodelkannya dan menyajikannya lewat dashboard interaktif dan laporan yang membantu pengambilan keputusan bisnis.',
+      tags: ['Excel', 'Power Query', 'Power BI', 'Tableau', 'SQL', 'Python', 'Data Cleaning', 'Data Visualization']
     },
     {
-      id: 'mobile',
+      id: 'Web',
       icon: <Cpu className="w-5 h-5 text-[#0284c7]" />,
-      title: 'Mobile App Engineering',
-      subtitle: 'Cross-Platform Android & iOS Applications',
-      desc: 'Mengembangkan aplikasi mobile lintas platform menggunakan Flutter dan Dart. Menangani arsitektur state management reaktif, konsumsi RESTful API, persistensi data lokal/cloud, serta performa aplikasi yang stabil di Android dan iOS.',
-      tags: ['Flutter', 'Dart SDK', 'Mobile Architecture', 'State Management', 'REST APIs', 'Cloud Firestore']
+      title: 'Web Development',
+      subtitle: 'Web Development',
+      desc: 'Merancang dan membangun aplikasi web, mulai dari antarmuka dan logika alur hingga basis data, dengan menerjemahkan kebutuhan proses bisnis menjadi sistem yang siap dipakai.',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Laravel', 'MySQL', 'Google Apps Script']
     },
     {
-      id: 'linux',
+      id: 'QA',
       icon: <Terminal className="w-5 h-5 text-[#8c6239]" />,
-      title: 'Linux & DevOps Workflows',
-      subtitle: 'NixOS Daily Driver & Server Management',
-      desc: 'Menggunakan NixOS sebagai sistem operasi harian dengan konfigurasi deklaratif Flakes. Terbiasa dengan manajemen server Linux (Debian/Arch), containerisasi Docker, otomatisasi skrip Bash, dan workflow kolaborasi Git.',
-      tags: ['NixOS Flakes', 'Arch Linux', 'Debian Server', 'Docker', 'Git Branching', 'Bash CLI']
+      title: 'Quality Assurance',
+      subtitle: '',
+      desc: '',
+      tags: []
     }
   ];
 
@@ -110,7 +110,7 @@ export const ArchitectureStage: React.FC<ArchitectureStageProps> = ({ isFlooded 
                 </div>
                 <div>
                   <span className="text-xs font-mono font-bold text-[#8c6239]">
-                    0{activePillar + 1} // {pillars[activePillar].subtitle}
+                    0{activePillar + 1}{pillars[activePillar].subtitle ? ` // ${pillars[activePillar].subtitle}` : ''}
                   </span>
                   <h3 className="text-xl sm:text-2xl font-black text-[#0f172a] mt-0.5">
                     {pillars[activePillar].title}
@@ -119,26 +119,30 @@ export const ArchitectureStage: React.FC<ArchitectureStageProps> = ({ isFlooded 
               </div>
             </div>
 
-            <p className="mt-4 text-sm sm:text-base text-[#475569] leading-relaxed">
-              {pillars[activePillar].desc}
-            </p>
+            {pillars[activePillar].desc && (
+              <p className="mt-4 text-sm sm:text-base text-[#475569] leading-relaxed">
+                {pillars[activePillar].desc}
+              </p>
+            )}
           </div>
 
-          <div className="pt-4 border-t border-[#e8dbc0]">
-            <span className="text-xs font-mono font-bold text-[#8c6239] block mb-2.5">
-              TECH STACK:
-            </span>
-            <div className="flex flex-wrap gap-2">
-              {pillars[activePillar].tags.map((t) => (
-                <span
-                  key={t}
-                  className="px-3.5 py-1.5 rounded-xl bg-[#fff9d4] text-xs font-mono font-semibold text-[#0f172a] border border-[#e2d3b3] shadow-xs"
-                >
-                  {t}
-                </span>
-              ))}
+          {pillars[activePillar].tags.length > 0 && (
+            <div className="pt-4 border-t border-[#e8dbc0]">
+              <span className="text-xs font-mono font-bold text-[#8c6239] block mb-2.5">
+                TECH STACK:
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {pillars[activePillar].tags.map((t) => (
+                  <span
+                    key={t}
+                    className="px-3.5 py-1.5 rounded-xl bg-[#fff9d4] text-xs font-mono font-semibold text-[#0f172a] border border-[#e2d3b3] shadow-xs"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </motion.div>
       </div>
 
@@ -154,10 +158,10 @@ export const ArchitectureStage: React.FC<ArchitectureStageProps> = ({ isFlooded 
           className="p-4 rounded-2xl bg-[#fffdf5] border border-[#e8dbc0] shadow-sm"
         >
           <span className="text-xs font-bold text-[#0f172a] block">
-            Clean Architecture
+            Data-Driven Thinking
           </span>
           <p className="text-[11px] text-[#64748b] mt-1 leading-relaxed">
-            Struktur kode terorganisir dengan pemisahan dependensi dan modularitas tinggi.
+            Mengambil keputusan dari data yang bersih, tervalidasi, dan bisa dipertanggungjawabkan.
           </p>
         </motion.div>
 
@@ -171,10 +175,10 @@ export const ArchitectureStage: React.FC<ArchitectureStageProps> = ({ isFlooded 
           className="p-4 rounded-2xl bg-[#fffdf5] border border-[#e8dbc0] shadow-sm"
         >
           <span className="text-xs font-bold text-[#0f172a] block">
-            Type-Safe Contract
+            Requirements &amp; Documentation
           </span>
           <p className="text-[11px] text-[#64748b] mt-1 leading-relaxed">
-            Keamanan tipe penuh dari skema database hingga interaksi klien.
+            Menggali kebutuhan lewat wawancara dan mendokumentasikannya sebagai use case, flowchart, dan kebutuhan fungsional.
           </p>
         </motion.div>
 
@@ -188,10 +192,10 @@ export const ArchitectureStage: React.FC<ArchitectureStageProps> = ({ isFlooded 
           className="p-4 rounded-2xl bg-[#fffdf5] border border-[#e8dbc0] shadow-sm"
         >
           <span className="text-xs font-bold text-[#0f172a] block">
-            Linux Workflows
+            Testing &amp; Validation
           </span>
           <p className="text-[11px] text-[#64748b] mt-1 leading-relaxed">
-            Konfigurasi deklaratif NixOS, containerisasi Docker, dan efisiensi terminal.
+            Menguji alur dan aturan bisnis dengan skenario valid dan tidak valid sebelum hasilnya dipakai.
           </p>
         </motion.div>
       </div>

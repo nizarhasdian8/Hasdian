@@ -3,7 +3,7 @@ import type { ProfileData, Project, TechItem, ExperienceItem } from '../types/po
 export const profileData: ProfileData = {
   name: 'Muhammad Nizar Hasdian',
   tagline: 'Data Analyst & Business Analyst',
-  education: 'Teknik Informatika (S1) • Universitas Widyatama',
+  education: 'Sistem Informasi (S1) • UNIKOM',
   status: 'Available for Engineering Roles & Projects',
   bio: 'Informatics engineering undergraduate focused on building end-to-end web platforms and mobile applications with resilient architecture, clean code, and Linux-driven workflows.',
   experienceStart: 'Active Developer',
@@ -16,7 +16,7 @@ export const profileData: ProfileData = {
     'Reactive Interfaces'
   ],
   contact: {
-    email: 'ryhndastra@gmail.com',
+    email: 'nizar.hasdian8@gmail.com',
     github: 'https://github.com/ryhndastra',
     linkedin: 'https://www.linkedin.com/in/nizar-hasdian',
     location: 'Indonesia'

@@ -63,7 +63,7 @@ export const ProfilePhotoCard: React.FC<ProfilePhotoCardProps> = ({ isFlooded })
 
         <div className="mt-3 px-2 flex items-center justify-between text-[11px] font-mono text-[#8c6239]">
           <span>FOTO PROFIL</span>
-          <span>ID // REYHAND ASTRA</span>
+          <span>ID // MUHAMMAD NIZAR HASDIAN</span>
         </div>
       </div>
 
@@ -76,7 +76,7 @@ export const ProfilePhotoCard: React.FC<ProfilePhotoCardProps> = ({ isFlooded })
           <MapPin className="w-4 h-4 text-[#8c6239]" />
           <span>Indonesia</span>
         </div>
-        <span className="text-[#0284c7] font-bold">Linux Enthusiasts</span>
+        <span className="text-[#0284c7] font-bold">Open to internship &amp; entry-level</span>
       </motion.div>
     </motion.div>
   );
