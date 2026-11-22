@@ -27,7 +27,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       <div className="relative flex items-center justify-center transition-transform group-hover:scale-105 select-none">
         <img
           src="/ryhndastra.png"
-          alt="Reyhand Astra Logo"
+          alt="Muhammad Nizar Hasdian Logo"
           className={`${currentSize.img} object-contain drop-shadow-md`}
           loading="eager"
         />
@@ -42,7 +42,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
                 : 'text-white drop-shadow-sm'
             } ${currentSize.text}`}
           >
-            Reyhand Astra
+            Muhammad Nizar Hasdian
           </span>
           <span
             className={`text-[11px] font-mono font-bold flex items-center gap-1 transition-colors duration-300 ${
@@ -51,7 +51,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
                 : 'text-[#fff9d4] drop-shadow-xs'
             }`}
           >
-            &gt;_ Full-Stack &amp; Mobile
+            &gt;_ Data Analyst &amp; Business Analyst
           </span>
         </div>
       )}

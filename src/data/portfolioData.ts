@@ -18,7 +18,7 @@ export const profileData: ProfileData = {
   contact: {
     email: 'ryhndastra@gmail.com',
     github: 'https://github.com/ryhndastra',
-    linkedin: 'https://linkedin.com/in/reyhand-astra',
+    linkedin: 'https://www.linkedin.com/in/nizar-hasdian',
     location: 'Indonesia'
   }
 };
