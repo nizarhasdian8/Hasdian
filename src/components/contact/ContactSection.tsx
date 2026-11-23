@@ -19,8 +19,8 @@ import { profileData } from '../../data/portfolioData';
 import { ContactOceanCanvas } from './ContactOceanCanvas';
 
 const inquiryTopics = [
+  { id: 'data', label: 'Analisis Data', subject: 'Inquiry: Data Analysis' },
   { id: 'web', label: 'Full-Stack Web', subject: 'Inquiry: Full-Stack Web Development' },
-  { id: 'mobile', label: 'Mobile App (Flutter)', subject: 'Inquiry: Flutter Mobile App' },
   { id: 'collab', label: 'Diskusi Santai', subject: 'Inquiry: Collaboration & Discussion' }
 ];
 
@@ -63,7 +63,7 @@ export const ContactSection: React.FC = () => {
   const mailtoLink = `mailto:${profileData.contact.email}?subject=${encodeURIComponent(
     selectedTopic.subject
   )}&body=${encodeURIComponent(
-    `Halo Reyhand,\n\nSaya ingin berdiskusi mengenai topik: ${selectedTopic.label}.\n\n[Tulis pesan Anda di sini]\n\nSalam,\n`
+    `Halo Nizar,\n\nSaya ingin berdiskusi mengenai topik: ${selectedTopic.label}.\n\n[Tulis pesan Anda di sini]\n\nSalam,\n`
   )}`;
 
   return (
@@ -151,7 +151,7 @@ export const ContactSection: React.FC = () => {
                 Mari Berdiskusi &amp; Berkolaborasi
               </h2>
               <p className="text-xs sm:text-base text-[#475569] font-medium leading-relaxed max-w-2xl">
-                Punya ide proyek, kebutuhan rekayasa web/mobile, atau peluang kolaborasi? Hubungi saya langsung melalui email dan topik di bawah.
+                Ada data yang ingin dibedah, sistem web yang ingin dibangun, atau sekadar ingin ngobrol? Pilih topik di bawah dan kirim pesan langsung ke email saya.
               </p>
             </div>
           </div>
@@ -364,7 +364,7 @@ export const ContactSection: React.FC = () => {
               <span className="hidden sm:inline text-[#64748b]">•</span>
             </div>
             <span className="text-[10px] sm:text-xs text-[#64748b] sm:text-[#0f172a] font-normal sm:font-bold">
-              Full-Stack &amp; Mobile Developer
+              Data Analyst &amp; Business Analyst
             </span>
           </div>
 

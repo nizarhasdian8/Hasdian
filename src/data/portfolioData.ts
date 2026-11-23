@@ -17,7 +17,7 @@ export const profileData: ProfileData = {
   ],
   contact: {
     email: 'nizar.hasdian8@gmail.com',
-    github: 'https://github.com/ryhndastra',
+    github: 'https://github.com/nizarhasdian8',
     linkedin: 'https://www.linkedin.com/in/nizar-hasdian',
     location: 'Indonesia'
   }
