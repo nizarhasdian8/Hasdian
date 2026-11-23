@@ -201,13 +201,13 @@ export const JourneyTimeline: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* role and organization */}
+                  {/* organization and role */}
                   <div>
                     <h3 className="text-lg sm:text-2xl font-black text-[#0f172a] tracking-tight group-hover:text-[#0284c7] transition-colors">
-                      {displayItem.role}
+                      {displayItem.organization}
                     </h3>
                     <div className="text-xs sm:text-sm font-mono font-bold text-[#0284c7] mt-0.5 sm:mt-1">
-                      {displayItem.organization}
+                      {displayItem.role}
                     </div>
                   </div>
 

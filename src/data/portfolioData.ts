@@ -367,10 +367,10 @@ export const experienceData: ExperienceItem[] = [
     category: 'education',
     badge: 'Pendidikan',
     period: '2022 - 2026',
-    role: 'S1 Sistem Informasi',
+    role: 'Sistem Informasi',
     organization: 'Universitas Komputer Indonesia (UNIKOM)',
     description:
-      'Menempuh studi Sistem Informasi dengan peminatan Big Data, mempelajari analisis proses bisnis, basis data, rekayasa perangkat lunak, dan pemrograman web.',
+      'Lulusan Sistem Informasi dengan peminatan Big Data, mempelajari analisis proses bisnis, basis data, rekayasa perangkat lunak, algoritma, dan pemrograman web.',
     highlights: [
       'Peminatan Big Data',
       'IPK 3.70 / 4.00',
