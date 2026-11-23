@@ -363,68 +363,163 @@ export const projectsData: Project[] = [
 
 export const experienceData: ExperienceItem[] = [
   {
-    id: 'edu-widyatama',
-    period: '2023 - Sekarang',
-    role: 'S1 Teknik Informatika',
-    organization: 'Universitas Widyatama (Angkatan 2023)',
-    badge: 'Pendidikan Formal',
+    id: 'edu-unikom',
     category: 'education',
+    badge: 'Pendidikan',
+    period: '2022 - 2026',
+    role: 'S1 Sistem Informasi',
+    organization: 'Universitas Komputer Indonesia (UNIKOM)',
     description:
-      'Menempuh studi sarjana Teknik Informatika dengan pendalaman fundamental ilmu komputer, struktur data, algoritma, rekayasa perangkat lunak, dan mengambil penjurusan spesialisasi Database / Data Analyst.',
+      'Menempuh studi Sistem Informasi dengan peminatan Big Data, mempelajari analisis proses bisnis, basis data, rekayasa perangkat lunak, dan pemrograman web.',
     highlights: [
-      'Penjurusan Database & Data Analyst',
-      'Pemodelan Data Relasional & Optimasi Query SQL',
-      'Fundamental Rekayasa Perangkat Lunak & Algoritma'
+      'Peminatan Big Data',
+      'IPK 3.70 / 4.00',
+      'Skripsi sistem informasi pencatatan pesanan dan stok berbasis web (Laravel)',
+      'Analisis kebutuhan dan pengujian black-box pada 8 modul'
     ],
-    tech: ['Database Systems', 'Data Analysis', 'SQL', 'Algorithms', 'Software Engineering', 'System Design']
+    tech: ['Big Data', 'Sistem Basis Data', 'Analisis Proses Bisnis', 'Rekayasa Perangkat Lunak', 'Pemrograman Web', 'Struktur Data']
   },
   {
-    id: 'exp-dicoding-dbs',
-    period: 'Feb 2026 - Jul 2026',
-    role: 'Fullstack Developer (Learning Path)',
-    organization: 'Dicoding CodingCamp 2026 Powered by DBS Foundation',
-    badge: 'Intensive Bootcamp',
+    id: 'org-futsal-unikom',
     category: 'bootcamp',
+    badge: 'Organisasi',
+    period: 'Nov 2023 - Okt 2024',
+    role: 'Ketua Umum',
+    organization: 'UKM Futsal UNIKOM',
     description:
-      'Program beasiswa pelatihan intensif Fullstack Developer dari Dicoding dan DBS Foundation. Membangun arsitektur frontend web modern (React & Vite), integrasi API backend type-safe, otentikasi data, dan berkolaborasi dalam Capstone Project kalorinAI.',
+      'Memimpin 10 pengurus dan lebih dari 50 anggota, menyusun dan mengawasi program kerja serta kegiatan tahunan UKM.',
     highlights: [
-      'Lulusan Jalur Fullstack Developer',
-      'Integrasi REST API, State Management & Cloud DB',
-      'Kolaborasi Tim Capstone Project kalorinAI'
+      'Memimpin 10 pengurus dan 50+ anggota',
+      'Menyusun dan mengawasi program kerja tahunan',
+      'Mewakili UKM di forum internal dan eksternal',
+      'Membangun kerja sama dan membina anggota'
     ],
-    tech: ['React', 'TypeScript', 'Node.js', 'Supabase', 'Prisma ORM', 'Tailwind CSS', 'REST API']
+    tech: ['Kepemimpinan', 'Manajemen Tim', 'Perencanaan Program', 'Komunikasi']
   },
   {
-    id: 'exp-cimart-mbkm',
-    period: 'Jul 2026 - Sekarang',
-    role: 'Full-Stack Developer',
-    organization: 'Inisiatif MBKM / KKN Tematik & Capstone Kampus Desa Cibenda',
-    badge: 'MBKM / Capstone Kampus',
+    id: 'exp-pengalaman',
     category: 'project',
+    badge: 'Magang',
+    period: 'Nov 2025 - Feb 2026',
+    role: 'UI/UX Designer',
+    organization: 'Syaamil Group',
     description:
-      'Inisiatif MBKM / KKN Tematik resmi dari kampus yang menjadi Capstone Project untuk digitalisasi komoditas ekonomi warga Desa Cibenda, Pangandaran. Dikerjakan secara mandiri dari perancangan arsitektur sistem, integrasi payment gateway Midtrans, notifikasi FCM, hingga deployment produksi.',
+      'Merancang dashboard web responsif untuk sistem pengelolaan aset menggunakan Figma, dari wireframe hingga prototype.',
     highlights: [
-      'Mandat Resmi Pimpinan Kampus & Perangkat Desa',
-      'Development Arsitektur End-to-End',
-      'Integrasi Payment Gateway Midtrans & WebSockets'
+      'Wireframe dan prototype di Figma',
+      'Dashboard web responsif',
+      'Tampilan dashboard Google Analytics'
     ],
-    tech: ['Laravel', 'Inertia.js', 'React', 'MySQL', 'Docker', 'WebSockets', 'Midtrans', 'Leaflet']
+    tech: ['Figma', 'UI/UX', 'Wireframe', 'Prototype', 'Google Analytics'],
+    entries: [
+      {
+        id: 'exp-syaamil',
+        badge: 'Magang',
+        period: 'Nov 2025 - Feb 2026',
+        role: 'UI/UX Designer',
+        organization: 'Syaamil Group',
+        description:
+          'Merancang dashboard web responsif untuk sistem pengelolaan aset menggunakan Figma, dari wireframe hingga prototype.',
+        highlights: [
+          'Wireframe dan prototype di Figma',
+          'Dashboard web responsif',
+          'Tampilan dashboard Google Analytics'
+        ],
+        tech: ['Figma', 'UI/UX', 'Wireframe', 'Prototype', 'Google Analytics']
+      },
+      {
+        id: 'exp-bpsdmp',
+        badge: 'Magang',
+        period: 'Agu 2025 - Okt 2025',
+        role: 'Web Developer Intern',
+        organization: 'BPSDMP Komdigi',
+        description:
+          'Mengembangkan aplikasi web pengajuan pelatihan dengan role admin dan peserta, memakai HTML, CSS, JavaScript, dan Google Apps Script.',
+        highlights: [
+          'Role admin dan peserta',
+          'Alur approval dan rejection',
+          'Laporan KPI (total pengajuan, approved, rejected)',
+          'Pengujian positif dan negatif bersama mentor'
+        ],
+        tech: ['HTML', 'CSS', 'JavaScript', 'Google Apps Script', 'Google Sheets']
+      }
+    ]
   },
   {
-    id: 'exp-rework-cybersecurity',
-    period: 'Agu 2026 - Des 2026',
-    role: 'Cyber Security Trainee (Red Team Focus)',
-    organization: 'Cyber Security Bootcamp by Rework Academy',
-    badge: 'Cyber Security Bootcamp',
+    id: 'exp-sertifikat',
     category: 'security',
+    badge: 'Sertifikasi',
+    period: 'Feb 2026',
+    role: 'Analis Data Madya',
+    organization: 'BNSP (LSP Informatika)',
     description:
-      'Pelatihan intensif keamanan siber komprehensif mulai dari fundamental cybersecurity, vulnerability assessment, web application penetration testing (OWASP Top 10), network penetration testing, bug bounty hunting, hingga penyusunan security reporting profesional. Fokus mendalam pada Red Team (Offensive Security) dengan pemahaman komplementer Blue Team (Defensive) dan Purple Team.',
+      'Sertifikasi kompetensi BNSP pada skema Analis Data Madya, mencakup 6 unit kompetensi.',
     highlights: [
-      'Web Application & Network Penetration Testing',
-      'Metodologi Bug Bounty & Eksploitasi OWASP Top 10',
-      'Vulnerability Assessment & Security Reporting',
-      'Fokus Offensive Red Team dengan Pemahaman Blue/Purple Team'
+      'Skema Analis Data Madya',
+      '6 unit kompetensi',
+      'Diterbitkan 9 Februari 2026'
     ],
-    tech: ['Web App Pentesting', 'Network Security', 'OWASP Top 10', 'Bug Bounty', 'Red Teaming', 'Linux Security', 'Security Reporting']
+    tech: ['Data Analyst', 'BNSP'],
+    entries: [
+      {
+        id: 'cert-bnsp',
+        badge: 'Sertifikasi',
+        period: 'Feb 2026',
+        role: 'Analis Data Madya',
+        organization: 'BNSP (LSP Informatika)',
+        description:
+          'Sertifikasi kompetensi BNSP pada skema Analis Data Madya, mencakup 6 unit kompetensi.',
+        highlights: [
+          'Skema Analis Data Madya',
+          '6 unit kompetensi',
+          'Diterbitkan 9 Februari 2026'
+        ],
+        tech: ['Data Analyst', 'BNSP']
+      },
+      {
+        id: 'cert-myskill-excel',
+        badge: 'Sertifikasi',
+        period: 'Nov 2026',
+        role: 'Project: Creating Sales Dashboard in Excel',
+        organization: 'MySkill',
+        description:
+          'Menyelesaikan e-learning project pembuatan sales dashboard di Microsoft Excel pada topik Portfolio in Microsoft Excel.',
+        highlights: [
+          'Ringkasan sales dan profit margin bulanan',
+          'Analisis per segmen dan 10 produk teratas',
+          'Slicer tahun, region, state, dan segmen'
+        ],
+        tech: ['Excel', 'Dashboard', 'Slicer', 'Data Visualization']
+      },
+      {
+        id: 'cert-gemini',
+        badge: 'Sertifikasi',
+        period: 'Agu 2026',
+        role: 'Gemini Certified Student (University)',
+        organization: 'Google for Education',
+        description: 'TODO',
+        tech: ['TODO']
+      },
+      {
+        id: 'cert-dqlab-python',
+        badge: 'Pelatihan',
+        period: 'Okt 2025',
+        role: 'Python Fundamental for Data Science',
+        organization: 'DQLab',
+        description:
+          'Menyelesaikan pelatihan dasar pemrograman Python untuk data science.',
+        tech: ['Python', 'Data Science']
+      },
+      {
+        id: 'cert-skilvul-uiux',
+        badge: 'Pelatihan',
+        period: 'Jul 2025',
+        role: 'UI/UX Design Mastery',
+        organization: 'Skilvul',
+        description:
+          'Mengikuti program UI/UX Design Mastery dengan studi kasus perancangan aplikasi mobile Kelas Online.',
+        tech: ['UI/UX Design', 'Case Study']
+      }
+    ]
   }
 ];

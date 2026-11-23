@@ -48,6 +48,7 @@ export interface ExperienceItem {
   description: string;
   highlights?: string[];
   tech: string[];
+  entries?: ExperienceItem[];
 }
 
 export interface ProfileData {

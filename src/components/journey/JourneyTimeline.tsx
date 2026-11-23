@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import {
   GraduationCap,
@@ -7,7 +7,9 @@ import {
   ShieldCheck,
   Calendar,
   CheckCircle2,
-  Compass
+  Compass,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { experienceData } from '../../data/portfolioData';
 import type { ExperienceItem } from '../../types/portfolio';
@@ -60,6 +62,7 @@ const categoryConfig: Record<
 
 export const JourneyTimeline: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const [entryIndices, setEntryIndices] = useState<Record<string, number>>({});
 
   // scroll progress tracker
   const { scrollYProgress } = useScroll({
@@ -114,7 +117,7 @@ export const JourneyTimeline: React.FC = () => {
               Milestone
             </h2>
             <p className="text-xs sm:text-base font-medium text-[#475569] max-w-2xl leading-relaxed">
-              Pendidikan sarjana informatika, program bootcamp intensif, inisiatif mandiri, dan eksplorasi keamanan siber.
+              Pendidikan, organisasi, pengalaman magang, dan sertifikasi.
             </p>
           </div>
         </motion.div>
@@ -131,8 +134,28 @@ export const JourneyTimeline: React.FC = () => {
           </div>
 
           {experienceData.map((item: ExperienceItem, idx: number) => {
+            const entries = item.entries && item.entries.length > 0 ? item.entries : [item];
+            const currentIdx = entryIndices[item.id] || 0;
+            const displayItem = entries[currentIdx] || item;
+            const totalEntries = entries.length;
+            const hasMultipleEntries = totalEntries > 1;
+
             const config = categoryConfig[item.category || 'education'] || categoryConfig.education;
             const Icon = config.icon;
+
+            const handlePrev = () => {
+              setEntryIndices((prev) => ({
+                ...prev,
+                [item.id]: ((prev[item.id] ?? 0) - 1 + totalEntries) % totalEntries
+              }));
+            };
+
+            const handleNext = () => {
+              setEntryIndices((prev) => ({
+                ...prev,
+                [item.id]: ((prev[item.id] ?? 0) + 1) % totalEntries
+              }));
+            };
 
             return (
               <motion.div
@@ -168,39 +191,39 @@ export const JourneyTimeline: React.FC = () => {
                       <span
                         className={`text-[10px] sm:text-xs font-mono font-black uppercase px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg sm:rounded-xl border-2 ${config.tagBg} ${config.tagBorder} ${config.tagText} shadow-[1.5px_1.5px_0px_#0f172a] sm:shadow-[2px_2px_0px_#0f172a]`}
                       >
-                        {item.badge || item.category}
+                        {displayItem.badge || displayItem.category || item.badge || item.category}
                       </span>
                     </div>
 
                     <div className="flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg sm:rounded-xl bg-[#fff9d4] border-2 border-[#0f172a] text-[10px] sm:text-xs font-mono font-black text-[#0f172a] shadow-[1.5px_1.5px_0px_#0f172a] sm:shadow-[2px_2px_0px_#0f172a]">
                       <Calendar className="w-3.5 h-3.5 text-[#0284c7]" />
-                      <span>{item.period}</span>
+                      <span>{displayItem.period}</span>
                     </div>
                   </div>
 
                   {/* role and organization */}
                   <div>
                     <h3 className="text-lg sm:text-2xl font-black text-[#0f172a] tracking-tight group-hover:text-[#0284c7] transition-colors">
-                      {item.role}
+                      {displayItem.role}
                     </h3>
                     <div className="text-xs sm:text-sm font-mono font-bold text-[#0284c7] mt-0.5 sm:mt-1">
-                      {item.organization}
+                      {displayItem.organization}
                     </div>
                   </div>
 
                   {/* narrative description */}
                   <p className="text-xs sm:text-base font-medium text-[#334155] leading-relaxed">
-                    {item.description}
+                    {displayItem.description}
                   </p>
 
                   {/* key highlights */}
-                  {item.highlights && item.highlights.length > 0 && (
+                  {displayItem.highlights && displayItem.highlights.length > 0 && (
                     <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#fff9d4]/80 border border-[#0f172a]/20 sm:border-2 sm:border-[#0f172a]/15 space-y-1.5 sm:space-y-2">
                       <div className="text-[10px] sm:text-[11px] font-mono font-black uppercase tracking-wider text-[#475569]">
                         Poin Kunci &amp; Spesialisasi
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2">
-                        {item.highlights.map((hl, hIdx) => (
+                        {displayItem.highlights.map((hl, hIdx) => (
                           <div
                             key={hIdx}
                             className="flex items-start gap-1.5 sm:gap-2 text-xs font-bold text-[#1e293b] leading-tight"
@@ -215,7 +238,7 @@ export const JourneyTimeline: React.FC = () => {
 
                   {/* skills and tech tags */}
                   <div className="pt-1 sm:pt-2 flex flex-wrap gap-1.5 sm:gap-2">
-                    {item.tech.map((t) => (
+                    {displayItem.tech.map((t) => (
                       <span
                         key={t}
                         className="text-[10px] sm:text-xs font-mono font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg sm:rounded-xl bg-[#fff9d4] hover:bg-[#fde047] text-[#0f172a] border border-[#0f172a] transition-colors"
@@ -225,6 +248,31 @@ export const JourneyTimeline: React.FC = () => {
                     ))}
                   </div>
                 </motion.div>
+
+                {/* entry navigation for multi-entry milestones */}
+                {hasMultipleEntries && (
+                  <div className="flex justify-end items-center gap-1.5 sm:gap-2 mt-2 sm:mt-3">
+                    <button
+                      type="button"
+                      onClick={handlePrev}
+                      aria-label="Sebelumnya"
+                      className="flex items-center justify-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg sm:rounded-xl bg-[#fff9d4] border-2 border-[#0f172a] text-[10px] sm:text-xs font-mono font-black text-[#0f172a] shadow-[1.5px_1.5px_0px_#0f172a] sm:shadow-[2px_2px_0px_#0f172a] cursor-pointer"
+                    >
+                      <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0f172a]" />
+                    </button>
+                    <span className="flex items-center justify-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg sm:rounded-xl bg-[#fff9d4] border-2 border-[#0f172a] text-[10px] sm:text-xs font-mono font-black text-[#0f172a] shadow-[1.5px_1.5px_0px_#0f172a] sm:shadow-[2px_2px_0px_#0f172a]">
+                      {currentIdx + 1} / {totalEntries}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      aria-label="Berikutnya"
+                      className="flex items-center justify-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg sm:rounded-xl bg-[#fff9d4] border-2 border-[#0f172a] text-[10px] sm:text-xs font-mono font-black text-[#0f172a] shadow-[1.5px_1.5px_0px_#0f172a] sm:shadow-[2px_2px_0px_#0f172a] cursor-pointer"
+                    >
+                      <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0f172a]" />
+                    </button>
+                  </div>
+                )}
               </motion.div>
             );
           })}

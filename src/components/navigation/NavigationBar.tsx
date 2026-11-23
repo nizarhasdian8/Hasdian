@@ -191,7 +191,6 @@ const navItems = [
   { label: 'Profil', id: 'about' },
   { label: 'Studi Kasus', id: 'projects' },
   { label: 'Tech Stack', id: 'stack' },
-  { label: 'Aktivitas', id: 'activity' },
   { label: 'Milestone', id: 'journey' },
   { label: 'Kontak', id: 'contact' },
 ];
