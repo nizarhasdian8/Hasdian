@@ -307,7 +307,7 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/ryhndastra/villanakey',
     isMobileApp: true,
     demoStatusLabel: 'Aplikasi Mobile Native (Demo/APK on request)',
-    imageUrl: '/projects/villa.png',
+    imageUrl: '/projects/supermarket-dashboard.jpg',
     imageFit: 'contain',
     featured: true,
     metrics: [
