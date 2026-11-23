@@ -23,183 +23,158 @@ export const profileData: ProfileData = {
   }
 };
 
+// Pemetaan kelompok filter domain & layer:
+// - layer 'client' + category 'frontend'  = Data Visualization
+// - layer 'backend' + category 'mobile'   = Fullstack
+// - layer 'database' + category 'backend' = Design
+// - layer 'devops' + category 'tools'     = Data Preparation
 export const techStackData: TechItem[] = [
-  // client interface layer
+  // Data Visualization (client / frontend)
   {
-    name: 'TypeScript',
+    name: 'Excel',
     category: 'frontend',
     layer: 'client',
-    iconKey: 'typescript',
-    color: '#3178C6',
-    roleTag: 'Type Contracts',
-    usageContext: 'Type-safe contracts across full-stack applications and component props',
-    projectLinks: ['cimart', 'kalorin-ai']
+    iconKey: 'excel',
+    color: '#217346',
+    roleTag: 'Spreadsheet Analysis',
+    usageContext: 'Spreadsheet-based analysis, charts, and interactive filtering with slicers',
+    projectLinks: []
   },
   {
-    name: 'React',
+    name: 'Power BI',
     category: 'frontend',
     layer: 'client',
-    iconKey: 'react',
-    color: '#0284c7',
-    roleTag: 'Component UI',
-    usageContext: 'Component-driven UI, state management, custom hooks, and interactive flows',
-    projectLinks: ['cimart', 'kalorin-ai']
+    iconKey: 'powerbi',
+    color: '#F2C811',
+    roleTag: 'Business Intelligence',
+    usageContext: 'Business intelligence reports and interactive visuals built from structured data',
+    projectLinks: []
   },
   {
-    name: 'Next.js',
+    name: 'Tableau',
     category: 'frontend',
     layer: 'client',
-    iconKey: 'nextdotjs',
-    color: '#0f172a',
-    roleTag: 'App Framework',
-    usageContext: 'Server-side rendering, static generation, and edge routing',
-    projectLinks: ['cimart']
+    iconKey: 'tableau',
+    color: '#E97627',
+    roleTag: 'Data Exploration',
+    usageContext: 'Exploring data visually through charts, maps, and interactive views',
+    projectLinks: []
   },
+
+  // Fullstack (backend / mobile)
   {
-    name: 'Flutter',
+    name: 'HTML',
     category: 'mobile',
-    layer: 'client',
-    iconKey: 'flutter',
-    color: '#0284c7',
-    roleTag: 'Native Mobile',
-    usageContext: 'Cross-platform native mobile apps for iOS and Android with 60fps reactive UI',
-    projectLinks: ['villanakey']
+    layer: 'backend',
+    iconKey: 'html5',
+    color: '#E34F26',
+    roleTag: 'Page Structure',
+    usageContext: 'Semantic page structure and content markup for web pages',
+    projectLinks: []
   },
   {
-    name: 'Tailwind CSS v4',
-    category: 'frontend',
-    layer: 'client',
-    iconKey: 'tailwindcss',
-    color: '#06b6d4',
-    roleTag: 'Design Tokens',
-    usageContext: 'Modern utility-first styling, design tokens, and fluid responsive layouts',
-    projectLinks: ['cimart', 'kalorin-ai']
+    name: 'CSS',
+    category: 'mobile',
+    layer: 'backend',
+    iconKey: 'css',
+    color: '#1572B6',
+    roleTag: 'Styling',
+    usageContext: 'Layout and styling for clean, responsive web interfaces',
+    projectLinks: []
   },
   {
     name: 'JavaScript',
-    category: 'frontend',
-    layer: 'client',
+    category: 'mobile',
+    layer: 'backend',
     iconKey: 'javascript',
-    color: '#eab308',
-    roleTag: 'Scripting Core',
-    usageContext: 'Core web scripting, DOM events, and asynchronous event loops',
-    projectLinks: ['cimart']
+    color: '#F7DF1E',
+    roleTag: 'Interactivity',
+    usageContext: 'Client-side interactivity and application logic in the browser',
+    projectLinks: []
   },
-
-  // backend engine layer
   {
     name: 'Laravel',
-    category: 'backend',
+    category: 'mobile',
     layer: 'backend',
     iconKey: 'laravel',
-    color: '#ef4444',
-    roleTag: 'MVC & REST Engine',
-    usageContext: 'Robust REST APIs, Inertia backend routing, authentication, and transaction handling',
-    projectLinks: ['cimart']
-  },
-  {
-    name: 'Node.js',
-    category: 'backend',
-    layer: 'backend',
-    iconKey: 'nodejs',
-    color: '#22c55e',
-    roleTag: 'Server Runtime',
-    usageContext: 'High-throughput microservices, real-time WebSockets, and build automation tooling',
-    projectLinks: ['kalorin-ai']
-  },
-
-  // database and cloud persistence layer
-  {
-    name: 'PostgreSQL',
-    category: 'backend',
-    layer: 'database',
-    iconKey: 'postgresql',
-    color: '#2563eb',
-    roleTag: 'Relational Core',
-    usageContext: 'Relational data modeling, complex queries, indexing, and transactional integrity',
-    projectLinks: ['kalorin-ai']
-  },
-  {
-    name: 'Supabase',
-    category: 'backend',
-    layer: 'database',
-    iconKey: 'supabase',
-    color: '#10b981',
-    roleTag: 'Cloud Postgres & Auth',
-    usageContext: 'Managed Postgres backend, row-level security policies, real-time subscriptions, and auth',
-    projectLinks: ['kalorin-ai']
+    color: '#FF2D20',
+    roleTag: 'PHP Framework',
+    usageContext: 'Server-side web application development with routing and MVC structure',
+    projectLinks: []
   },
   {
     name: 'MySQL',
-    category: 'backend',
-    layer: 'database',
+    category: 'mobile',
+    layer: 'backend',
     iconKey: 'mysql',
-    color: '#0284c7',
-    roleTag: 'Transactional DB',
-    usageContext: 'E-commerce relational database schemas, ACID transactions, and optimized indexing',
-    projectLinks: ['cimart']
+    color: '#4479A1',
+    roleTag: 'Relational Database',
+    usageContext: 'Relational data storage and querying for web applications',
+    projectLinks: []
   },
   {
-    name: 'Firebase',
-    category: 'backend',
-    layer: 'database',
-    iconKey: 'firebase',
-    color: '#f59e0b',
-    roleTag: 'NoSQL & Real-Time Sync',
-    usageContext: 'Cloud Firestore real-time calendar syncing, FCM push notifications, and Auth',
-    projectLinks: ['villanakey', 'cimart']
-  },
-  {
-    name: 'Prisma ORM',
-    category: 'backend',
-    layer: 'database',
-    iconKey: 'prisma',
-    color: '#6366f1',
-    roleTag: 'Type-Safe ORM',
-    usageContext: 'Type-safe database migrations, declarative schema modeling, and optimized queries',
-    projectLinks: ['kalorin-ai']
+    name: 'Google Apps Script',
+    category: 'mobile',
+    layer: 'backend',
+    iconKey: 'googleappsscript',
+    color: '#4285F4',
+    roleTag: 'Script & Automation',
+    usageContext: 'Server-side scripting and automation on Google Workspace data',
+    projectLinks: []
   },
 
-  // infrastructure and devops layer
+  // Design (database / backend)
   {
-    name: 'Linux',
-    category: 'tools',
-    layer: 'devops',
-    iconKey: 'linux',
-    color: '#eab308',
-    roleTag: 'System OS',
-    usageContext: 'Primary Unix environment, Bash scripting, system service management, and workflow',
-    projectLinks: ['cimart', 'villanakey', 'kalorin-ai']
+    name: 'Figma',
+    category: 'backend',
+    layer: 'database',
+    iconKey: 'figma',
+    color: '#F24E1E',
+    roleTag: 'UI/UX',
+    usageContext: 'UI/UX design and interface layout',
+    projectLinks: []
   },
   {
-    name: 'Docker',
+    name: 'Canva',
+    category: 'backend',
+    layer: 'database',
+    iconKey: 'canva',
+    color: '#00C4CC',
+    roleTag: 'Visual Design',
+    usageContext: 'Quick visual design for presentations and graphic content',
+    projectLinks: []
+  },
+
+  // Data Preparation (devops / tools)
+  {
+    name: 'Power Query',
     category: 'tools',
     layer: 'devops',
-    iconKey: 'docker',
-    color: '#0284c7',
-    roleTag: 'Containerization',
-    usageContext: 'Containerized deployment, multi-stage builds, and consistent staging environments',
-    projectLinks: ['cimart']
+    iconKey: 'powerquery',
+    color: '#1E3A5F',
+    roleTag: 'Data Cleaning',
+    usageContext: 'Cleaning, transforming, and reshaping raw data before analysis',
+    projectLinks: []
   },
   {
-    name: 'Git',
+    name: 'SQL',
     category: 'tools',
     layer: 'devops',
-    iconKey: 'git',
-    color: '#f97316',
-    roleTag: 'Version Control',
-    usageContext: 'Version control, feature branching workflows, code reviews, and CI/CD pipelines',
-    projectLinks: ['cimart', 'villanakey', 'kalorin-ai']
+    iconKey: 'sql',
+    color: '#1E3A5F',
+    roleTag: 'Data Querying',
+    usageContext: 'Querying and filtering data from relational databases',
+    projectLinks: []
   },
   {
-    name: 'Vercel',
+    name: 'Python',
     category: 'tools',
     layer: 'devops',
-    iconKey: 'vercel',
-    color: '#0f172a',
-    roleTag: 'Edge Deployment',
-    usageContext: 'Edge deployment, continuous integration, and global CDN delivery for web apps',
-    projectLinks: ['kalorin-ai']
+    iconKey: 'python',
+    color: '#3776AB',
+    roleTag: 'Data Scripting',
+    usageContext: 'Scripting for data handling and processing',
+    projectLinks: []
   }
 ];
 

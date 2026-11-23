@@ -1,45 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { BarChart3 } from 'lucide-react';
 import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
+  SiFigma,
+  SiPython,
+  SiHtml5,
+  SiCss,
   SiJavascript,
-  SiTailwindcss,
-  SiFlutter,
   SiLaravel,
-  SiNodedotjs,
   SiMysql,
-  SiPostgresql,
-  SiSupabase,
-  SiFirebase,
-  SiPrisma,
-  SiDocker,
-  SiLinux,
-  SiGit,
-  SiVercel
+  SiGoogleappsscript
 } from '@icons-pack/react-simple-icons';
 import type { TechItem, TechLayer } from '../../types/portfolio';
 import type { FlowDomainId } from './PipelineFlowPresets';
 
-const iconMap: Record<string, React.FC<{ size?: number; color?: string; className?: string }>> = {
-  react: SiReact,
-  nextdotjs: SiNextdotjs,
-  typescript: SiTypescript,
+const iconMap: Record<string, React.ComponentType<{ size?: number; color?: string; className?: string }>> = {
+  excel: BarChart3,
+  powerbi: BarChart3,
+  tableau: BarChart3,
+  html5: SiHtml5,
+  css: SiCss,
   javascript: SiJavascript,
-  tailwindcss: SiTailwindcss,
-  flutter: SiFlutter,
   laravel: SiLaravel,
-  nodejs: SiNodedotjs,
   mysql: SiMysql,
-  postgresql: SiPostgresql,
-  supabase: SiSupabase,
-  firebase: SiFirebase,
-  prisma: SiPrisma,
-  docker: SiDocker,
-  linux: SiLinux,
-  git: SiGit,
-  vercel: SiVercel
+  googleappsscript: SiGoogleappsscript,
+  figma: SiFigma,
+  canva: BarChart3,
+  powerquery: BarChart3,
+  sql: BarChart3,
+  python: SiPython
 };
 
 interface PipelineNodeLayerProps {
@@ -73,8 +62,8 @@ export const PipelineNodeLayer: React.FC<PipelineNodeLayerProps> = ({
   const isLayerActiveInDomain =
     activeDomain === 'all' ||
     (activeDomain === 'web' && layerId === 'client') ||
-    (activeDomain === 'mobile' && layerId === 'client') ||
-    (activeDomain === 'backend' && (layerId === 'backend' || layerId === 'database')) ||
+    (activeDomain === 'mobile' && layerId === 'backend') ||
+    (activeDomain === 'backend' && layerId === 'database') ||
     (activeDomain === 'devops' && layerId === 'devops');
 
   const handleInspectClick = (e: React.MouseEvent) => {

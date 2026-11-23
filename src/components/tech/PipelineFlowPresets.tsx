@@ -27,31 +27,31 @@ export const PipelineFlowPresets: React.FC<PipelineFlowPresetsProps> = ({
     },
     {
       id: 'web',
-      label: 'Frontend / Web',
+      label: 'Data Visualization',
       icon: Globe,
-      tag: 'Web'
+      tag: 'Viz'
     },
     {
       id: 'mobile',
-      label: 'Mobile App',
+      label: 'Fullstack',
       icon: Smartphone,
-      tag: 'Mobile'
+      tag: 'Web'
     },
     {
       id: 'backend',
-      label: 'Backend & DB',
+      label: 'Design',
       icon: Server,
-      tag: 'Backend'
+      tag: 'Design'
     },
     {
       id: 'devops',
-      label: 'DevOps & Linux',
+      label: 'Data Preparation',
       icon: Terminal,
-      tag: 'DevOps'
+      tag: 'Prep'
     },
     {
       id: 'cybersecurity',
-      label: 'Cyber Security',
+      label: 'Quality Assurance',
       icon: Lock,
       tag: 'Coming Soon',
       isComingSoon: true
@@ -79,7 +79,7 @@ export const PipelineFlowPresets: React.FC<PipelineFlowPresetsProps> = ({
             return (
               <div
                 key={domain.id}
-                title="Modul Cyber Security sedang dalam tahap persiapan"
+                title="Modul Quality Assurance sedang dalam tahap persiapan"
                 className="p-3 rounded-2xl border-2 border-dashed border-[#94a3b8] bg-[#f1f5f9]/70 text-left opacity-50 cursor-not-allowed select-none flex flex-col justify-between"
               >
                 <div className="flex items-center justify-between">

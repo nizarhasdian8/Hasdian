@@ -7,49 +7,38 @@ import {
   ShieldAlert,
   Lock,
   Terminal,
-  Activity
+  Activity,
+  BarChart3
 } from 'lucide-react';
 import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
+  SiFigma,
+  SiPython,
+  SiHtml5,
+  SiCss,
   SiJavascript,
-  SiTailwindcss,
-  SiFlutter,
   SiLaravel,
-  SiNodedotjs,
   SiMysql,
-  SiPostgresql,
-  SiSupabase,
-  SiFirebase,
-  SiPrisma,
-  SiDocker,
-  SiLinux,
-  SiGit,
-  SiVercel
+  SiGoogleappsscript
 } from '@icons-pack/react-simple-icons';
 import type { TechItem, TechLayer } from '../../types/portfolio';
 import { projectsData } from '../../data/portfolioData';
 import type { FlowDomainId } from './PipelineFlowPresets';
 
-const iconMap: Record<string, React.FC<{ size?: number; color?: string; className?: string }>> = {
-  react: SiReact,
-  nextdotjs: SiNextdotjs,
-  typescript: SiTypescript,
+const iconMap: Record<string, React.ComponentType<{ size?: number; color?: string; className?: string }>> = {
+  excel: BarChart3,
+  powerbi: BarChart3,
+  tableau: BarChart3,
+  html5: SiHtml5,
+  css: SiCss,
   javascript: SiJavascript,
-  tailwindcss: SiTailwindcss,
-  flutter: SiFlutter,
   laravel: SiLaravel,
-  nodejs: SiNodedotjs,
   mysql: SiMysql,
-  postgresql: SiPostgresql,
-  supabase: SiSupabase,
-  firebase: SiFirebase,
-  prisma: SiPrisma,
-  docker: SiDocker,
-  linux: SiLinux,
-  git: SiGit,
-  vercel: SiVercel
+  googleappsscript: SiGoogleappsscript,
+  figma: SiFigma,
+  canva: BarChart3,
+  powerquery: BarChart3,
+  sql: BarChart3,
+  python: SiPython
 };
 
 interface PipelineInspectorProps {
@@ -71,52 +60,52 @@ const layerDetailsMap: Record<
   }
 > = {
   client: {
-    title: 'Frontend & Web Client',
-    subtitle: 'Web & Mobile',
+    title: 'Data Visualization',
+    subtitle: 'Dashboard & Reporting',
     description:
-      'Pengembangan antarmuka web dan mobile menggunakan React, TypeScript, dan Flutter dengan fokus pada interaktivitas dan performa yang responsif.',
+      'Menyajikan data dalam grafik dan dashboard interaktif agar tren dan insight mudah dibaca.',
     guarantees: [
-      'Type-safe props & contracts',
-      'Aplikasi Android & iOS',
-      'Desain responsif modern'
+      'Dashboard interaktif dengan filter',
+      'Visualisasi tren dan perbandingan data',
+      'Penyajian insight yang mudah dipahami'
     ],
-    role: 'Frontend & Mobile'
+    role: 'Data Visualization'
   },
   backend: {
-    title: 'Backend & Server',
-    subtitle: 'Server & API',
+    title: 'Fullstack',
+    subtitle: 'Web Application',
     description:
-      'Pengembangan arsitektur backend menggunakan Laravel dan Node.js untuk menangani REST API, routing, dan komunikasi data real-time.',
+      'Membangun aplikasi web dari antarmuka hingga logika dan penyimpanan data di sisi server.',
     guarantees: [
-      'Penanganan transaksi database',
-      'Komunikasi WebSockets',
-      'Otentikasi aman & API tokens'
+      'Struktur dan tampilan halaman web',
+      'Logika aplikasi di sisi server',
+      'Penyimpanan dan pengelolaan data'
     ],
-    role: 'Backend Engineering'
+    role: 'Fullstack Development'
   },
   database: {
-    title: 'Database & Penyimpanan',
-    subtitle: 'Relational & NoSQL',
+    title: 'Design',
+    subtitle: 'UI/UX & Visual',
     description:
-      'Pengelolaan basis data relasional PostgreSQL & MySQL, serta database cloud Firestore dan Supabase dengan sinkronisasi real-time.',
+      'Merancang tampilan dan pengalaman pengguna dengan Figma, serta materi visual dengan Canva.',
     guarantees: [
-      'Migrasi skema via Prisma',
-      'Sinkronisasi real-time NoSQL',
-      'Query terindeks dan teroptimasi'
+      'Perancangan antarmuka (UI/UX)',
+      'Desain visual yang konsisten',
+      'Materi visual untuk presentasi dan konten'
     ],
-    role: 'Database & Storage'
+    role: 'UI/UX & Visual Design'
   },
   devops: {
-    title: 'DevOps & Lingkungan Kerja',
-    subtitle: 'Linux & Deployment',
+    title: 'Data Preparation',
+    subtitle: 'Cleaning & Querying',
     description:
-      'Alur kerja pengembangan berbasis sistem operasi Linux, isolasi aplikasi dengan Docker, manajemen kode dengan Git, dan hosting edge Vercel.',
+      'Membersihkan, mengubah, dan memvalidasi data mentah dengan Power Query, SQL, dan Python sebelum dianalisis.',
     guarantees: [
-      'Lingkungan kontainer Docker',
-      'Branching & version control Git',
-      'Automasi terminal Unix'
+      'Pembersihan data (data cleaning)',
+      'Query data dengan SQL',
+      'Validasi kualitas data sebelum analisis'
     ],
-    role: 'DevOps & Tools'
+    role: 'Data Preparation'
   }
 };
 
@@ -148,7 +137,7 @@ export const PipelineInspector: React.FC<PipelineInspectorProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-2xl sm:text-3xl font-black text-[#0f172a] tracking-tight">
-                  Cyber Security
+                  Quality Assurance
                 </span>
                 <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded-lg bg-[#fee2e2] text-[#dc2626] border border-[#dc2626]">
                   COMING SOON
@@ -156,7 +145,7 @@ export const PipelineInspector: React.FC<PipelineInspectorProps> = ({
               </div>
 
               <div className="text-xs font-mono text-[#0284c7] font-bold mt-0.5">
-                Riset & Eksplorasi Keamanan Siber
+                Riset &amp; Eksplorasi Pengujian Perangkat Lunak
               </div>
             </div>
           </div>
@@ -173,7 +162,7 @@ export const PipelineInspector: React.FC<PipelineInspectorProps> = ({
             Fokus Eksplorasi
           </div>
           <p className="text-sm sm:text-base text-[#1e293b] font-medium leading-relaxed bg-[#fff9d4]/60 p-4 rounded-2xl border border-[#0f172a]/20">
-            Bidang keamanan siber yang sedang dipersiapkan mencakup Web Application Security (OWASP Top 10), Network Traffic Analysis, Capture The Flag (CTF), dan Linux System Security.
+            Bidang quality assurance yang sedang dipersiapkan mencakup dasar pengujian perangkat lunak, penyusunan test case, dan black-box testing.
           </p>
         </div>
 
@@ -187,30 +176,30 @@ export const PipelineInspector: React.FC<PipelineInspectorProps> = ({
             <div className="p-4 rounded-2xl bg-[#fff9d4] border-2 border-[#0f172a] shadow-[3px_3px_0px_#0f172a] space-y-1">
               <div className="flex items-center gap-2 text-xs font-mono font-black text-[#0f172a]">
                 <Lock className="w-4 h-4 text-[#dc2626]" />
-                <span>Web App Security</span>
+                <span>Test Case</span>
               </div>
               <p className="text-xs text-[#475569] font-medium">
-                Vulnerability testing, pencegahan XSS/SQLi, dan audit otentikasi.
+                Penyusunan skenario pengujian fungsional dan validasi alur aplikasi.
               </p>
             </div>
 
             <div className="p-4 rounded-2xl bg-[#fff9d4] border-2 border-[#0f172a] shadow-[3px_3px_0px_#0f172a] space-y-1">
               <div className="flex items-center gap-2 text-xs font-mono font-black text-[#0f172a]">
                 <Terminal className="w-4 h-4 text-[#0284c7]" />
-                <span>Network Analysis</span>
+                <span>Black-box Testing</span>
               </div>
               <p className="text-xs text-[#475569] font-medium">
-                Port scanning, inspeksi paket jaringan, dan firewall.
+                Pengujian fungsionalitas sistem berdasarkan spesifikasi kebutuhan tanpa melihat kode internal.
               </p>
             </div>
 
             <div className="p-4 rounded-2xl bg-[#fff9d4] border-2 border-[#0f172a] shadow-[3px_3px_0px_#0f172a] space-y-1">
               <div className="flex items-center gap-2 text-xs font-mono font-black text-[#0f172a]">
                 <Activity className="w-4 h-4 text-[#16a34a]" />
-                <span>Linux Security</span>
+                <span>Use Case Testing</span>
               </div>
               <p className="text-xs text-[#475569] font-medium">
-                Hardening izin sistem, manajemen SSH, dan isolasi proses.
+                Validasi kesesuaian alur bisnis dan skenario pengguna end-to-end.
               </p>
             </div>
           </div>

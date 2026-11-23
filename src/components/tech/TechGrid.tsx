@@ -27,10 +27,12 @@ export const TechGrid: React.FC<TechGridProps> = ({ onOpenProject }) => {
     setSelectedTech(null);
 
     // automatically shift inspection layer to the primary active layer for that domain
-    if (domain === 'web' || domain === 'mobile') {
+    if (domain === 'web') {
       setSelectedLayer('client');
-    } else if (domain === 'backend') {
+    } else if (domain === 'mobile') {
       setSelectedLayer('backend');
+    } else if (domain === 'backend') {
+      setSelectedLayer('database');
     } else if (domain === 'devops') {
       setSelectedLayer('devops');
     }
@@ -72,7 +74,7 @@ export const TechGrid: React.FC<TechGridProps> = ({ onOpenProject }) => {
                 Tech Stack & Tools
               </h2>
               <p className="text-sm sm:text-base font-medium text-[#475569] mt-2 max-w-2xl leading-relaxed">
-                Teknologi dan tools yang saya gunakan untuk membangun aplikasi web dan mobile.
+                Tools yang saya gunakan untuk mengolah data, membangun dashboard, dan mengembangkan aplikasi web.
               </p>
             </div>
 
@@ -108,9 +110,9 @@ export const TechGrid: React.FC<TechGridProps> = ({ onOpenProject }) => {
             <PipelineNodeLayer
               layerId="client"
               stepNumber="01"
-              title="Frontend & Web"
-              subtitle="Client UI"
-              roleDescription="Pengembangan antarmuka web modern dan aplikasi mobile cross-platform."
+              title="Data Visualization"
+              subtitle="Visualization"
+              roleDescription="Dashboard dan visualisasi data interaktif."
               techItems={clientTech}
               activeDomain={activeDomain}
               selectedTech={selectedTech}
@@ -123,9 +125,9 @@ export const TechGrid: React.FC<TechGridProps> = ({ onOpenProject }) => {
             <PipelineNodeLayer
               layerId="backend"
               stepNumber="02"
-              title="Backend"
-              subtitle="Server & API"
-              roleDescription="Pengembangan server, REST API, dan integrasi backend."
+              title="Fullstack"
+              subtitle="Web Dev"
+              roleDescription="Pengembangan aplikasi web dari antarmuka hingga server dan database."
               techItems={backendTech}
               activeDomain={activeDomain}
               selectedTech={selectedTech}
@@ -138,9 +140,9 @@ export const TechGrid: React.FC<TechGridProps> = ({ onOpenProject }) => {
             <PipelineNodeLayer
               layerId="database"
               stepNumber="03"
-              title="Database"
-              subtitle="Data & Storage"
-              roleDescription="Pengelolaan data relasional dan database cloud real-time."
+              title="Design"
+              subtitle="UI/UX"
+              roleDescription="Perancangan antarmuka dan materi visual."
               techItems={databaseTech}
               activeDomain={activeDomain}
               selectedTech={selectedTech}
@@ -153,9 +155,9 @@ export const TechGrid: React.FC<TechGridProps> = ({ onOpenProject }) => {
             <PipelineNodeLayer
               layerId="devops"
               stepNumber="04"
-              title="DevOps & Tools"
-              subtitle="Environment"
-              roleDescription="Sistem operasi Linux, kontainer Docker, dan deployment."
+              title="Data Preparation"
+              subtitle="Data Prep"
+              roleDescription="Pembersihan dan pengolahan data mentah."
               techItems={devopsTech}
               activeDomain={activeDomain}
               selectedTech={selectedTech}
