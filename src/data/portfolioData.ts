@@ -350,7 +350,7 @@ export const projectsData: Project[] = [
     role: 'Lead Web Full-Stack Developer',
     githubUrl: 'https://github.com/ryhndastra/kalorin-ai',
     demoUrl: 'https://kalorin-ai.vercel.app',
-    imageUrl: '/projects/kalorinLogo.png',
+    imageUrl: '/projects/flight-delay-dashboard.jpg',
     imageFit: 'contain',
     featured: true,
     metrics: [
