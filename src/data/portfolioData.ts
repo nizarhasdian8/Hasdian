@@ -268,8 +268,8 @@ export const projectsData: Project[] = [
     demoUrl: 'https://cimart.ryhndastra.site',
     isPrivateRepo: true,
     privateRepoReason: 'Repository privat karena hak cipta institusi & kerahasiaan data',
-    imageUrl: '/projects/CibendaMart.png',
-    imageFit: 'cover',
+    imageUrl: '/projects/sales-dashboard.jpg',
+    imageFit: 'contain',
     featured: true,
     metrics: [
       { label: 'Engineering', value: 'Full-Stack Developer' },
