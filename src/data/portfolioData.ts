@@ -23,13 +23,13 @@ export const profileData: ProfileData = {
   }
 };
 
-// Pemetaan kelompok filter domain & layer:
-// - layer 'client' + category 'frontend'  = Data Visualization
-// - layer 'backend' + category 'mobile'   = Fullstack
-// - layer 'database' + category 'backend' = Design
-// - layer 'devops' + category 'tools'     = Data Preparation
+// Pemetaan kelompok (kartu -> layer -> category):
+// - 01 Data Visualization  -> layer 'client'   -> category 'frontend'
+// - 02 Frontend & Web      -> layer 'backend'  -> category 'mobile'
+// - 03 Backend & DB        -> layer 'database' -> category 'backend'
+// - 04 Design & Tools      -> layer 'devops'   -> category 'tools'
 export const techStackData: TechItem[] = [
-  // Data Visualization (client / frontend)
+  // 01 Data Visualization (client / frontend)
   {
     name: 'Excel',
     category: 'frontend',
@@ -60,8 +60,38 @@ export const techStackData: TechItem[] = [
     usageContext: 'Exploring data visually through charts, maps, and interactive views',
     projectLinks: []
   },
+  {
+    name: 'Power Query',
+    category: 'frontend',
+    layer: 'client',
+    iconKey: 'powerquery',
+    color: '#1E3A5F',
+    roleTag: 'Data Cleaning',
+    usageContext: 'Cleaning, transforming, and reshaping raw data before analysis',
+    projectLinks: []
+  },
+  {
+    name: 'SQL',
+    category: 'frontend',
+    layer: 'client',
+    iconKey: 'sql',
+    color: '#1E3A5F',
+    roleTag: 'Data Querying',
+    usageContext: 'Querying and filtering data from relational databases',
+    projectLinks: []
+  },
+  {
+    name: 'Python',
+    category: 'frontend',
+    layer: 'client',
+    iconKey: 'python',
+    color: '#3776AB',
+    roleTag: 'Data Scripting',
+    usageContext: 'Scripting for data handling and processing',
+    projectLinks: []
+  },
 
-  // Fullstack (backend / mobile)
+  // 02 Frontend & Web (backend / mobile)
   {
     name: 'HTML',
     category: 'mobile',
@@ -73,13 +103,13 @@ export const techStackData: TechItem[] = [
     projectLinks: []
   },
   {
-    name: 'CSS',
+    name: 'Tailwind CSS',
     category: 'mobile',
     layer: 'backend',
-    iconKey: 'css',
-    color: '#1572B6',
-    roleTag: 'Styling',
-    usageContext: 'Layout and styling for clean, responsive web interfaces',
+    iconKey: 'tailwindcss',
+    color: '#06B6D4',
+    roleTag: 'Utility-First Styling',
+    usageContext: 'Utility-first styling for building responsive interfaces',
     projectLinks: []
   },
   {
@@ -92,10 +122,12 @@ export const techStackData: TechItem[] = [
     usageContext: 'Client-side interactivity and application logic in the browser',
     projectLinks: []
   },
+
+  // 03 Backend & DB (database / backend)
   {
     name: 'Laravel',
-    category: 'mobile',
-    layer: 'backend',
+    category: 'backend',
+    layer: 'database',
     iconKey: 'laravel',
     color: '#FF2D20',
     roleTag: 'PHP Framework',
@@ -104,8 +136,8 @@ export const techStackData: TechItem[] = [
   },
   {
     name: 'MySQL',
-    category: 'mobile',
-    layer: 'backend',
+    category: 'backend',
+    layer: 'database',
     iconKey: 'mysql',
     color: '#4479A1',
     roleTag: 'Relational Database',
@@ -114,20 +146,30 @@ export const techStackData: TechItem[] = [
   },
   {
     name: 'Google Apps Script',
-    category: 'mobile',
-    layer: 'backend',
+    category: 'backend',
+    layer: 'database',
     iconKey: 'googleappsscript',
     color: '#4285F4',
     roleTag: 'Script & Automation',
     usageContext: 'Server-side scripting and automation on Google Workspace data',
     projectLinks: []
   },
-
-  // Design (database / backend)
   {
-    name: 'Figma',
+    name: 'Google Sheets',
     category: 'backend',
     layer: 'database',
+    iconKey: 'googlesheets',
+    color: '#34A853',
+    roleTag: 'Spreadsheet Database',
+    usageContext: 'Spreadsheet-based data storage and collaboration',
+    projectLinks: []
+  },
+
+  // 04 Design & Tools (devops / tools)
+  {
+    name: 'Figma',
+    category: 'tools',
+    layer: 'devops',
     iconKey: 'figma',
     color: '#F24E1E',
     roleTag: 'UI/UX',
@@ -136,44 +178,52 @@ export const techStackData: TechItem[] = [
   },
   {
     name: 'Canva',
-    category: 'backend',
-    layer: 'database',
+    category: 'tools',
+    layer: 'devops',
     iconKey: 'canva',
     color: '#00C4CC',
     roleTag: 'Visual Design',
     usageContext: 'Quick visual design for presentations and graphic content',
     projectLinks: []
   },
-
-  // Data Preparation (devops / tools)
   {
-    name: 'Power Query',
+    name: 'Notion',
     category: 'tools',
     layer: 'devops',
-    iconKey: 'powerquery',
-    color: '#1E3A5F',
-    roleTag: 'Data Cleaning',
-    usageContext: 'Cleaning, transforming, and reshaping raw data before analysis',
+    iconKey: 'notion',
+    color: '#000000',
+    roleTag: 'Documentation',
+    usageContext: 'Documentation and note organization in structured workspaces',
     projectLinks: []
   },
   {
-    name: 'SQL',
+    name: 'Trello',
     category: 'tools',
     layer: 'devops',
-    iconKey: 'sql',
-    color: '#1E3A5F',
-    roleTag: 'Data Querying',
-    usageContext: 'Querying and filtering data from relational databases',
+    iconKey: 'trello',
+    color: '#0052CC',
+    roleTag: 'Project Management',
+    usageContext: 'Task tracking and project management with boards',
     projectLinks: []
   },
   {
-    name: 'Python',
+    name: 'GitHub',
     category: 'tools',
     layer: 'devops',
-    iconKey: 'python',
-    color: '#3776AB',
-    roleTag: 'Data Scripting',
-    usageContext: 'Scripting for data handling and processing',
+    iconKey: 'github',
+    color: '#181717',
+    roleTag: 'Version Control',
+    usageContext: 'Version control and code collaboration with Git repositories',
+    projectLinks: []
+  },
+  {
+    name: 'Vercel',
+    category: 'tools',
+    layer: 'devops',
+    iconKey: 'vercel',
+    color: '#000000',
+    roleTag: 'Deployment',
+    usageContext: 'Deploying and hosting web applications with automatic builds from Git',
     projectLinks: []
   }
 ];

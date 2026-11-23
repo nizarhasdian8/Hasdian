@@ -111,8 +111,8 @@ export const TechGrid: React.FC<TechGridProps> = ({ onOpenProject }) => {
               layerId="client"
               stepNumber="01"
               title="Data Visualization"
-              subtitle="Visualization"
-              roleDescription="Dashboard dan visualisasi data interaktif."
+              subtitle="Analytics"
+              roleDescription="Pengolahan data hingga dashboard dan visualisasi interaktif."
               techItems={clientTech}
               activeDomain={activeDomain}
               selectedTech={selectedTech}
@@ -125,9 +125,9 @@ export const TechGrid: React.FC<TechGridProps> = ({ onOpenProject }) => {
             <PipelineNodeLayer
               layerId="backend"
               stepNumber="02"
-              title="Fullstack"
-              subtitle="Web Dev"
-              roleDescription="Pengembangan aplikasi web dari antarmuka hingga server dan database."
+              title="Frontend & Web"
+              subtitle="Client UI"
+              roleDescription="Pengembangan antarmuka web yang responsif."
               techItems={backendTech}
               activeDomain={activeDomain}
               selectedTech={selectedTech}
@@ -140,9 +140,9 @@ export const TechGrid: React.FC<TechGridProps> = ({ onOpenProject }) => {
             <PipelineNodeLayer
               layerId="database"
               stepNumber="03"
-              title="Design"
-              subtitle="UI/UX"
-              roleDescription="Perancangan antarmuka dan materi visual."
+              title="Backend & DB"
+              subtitle="Server & Data"
+              roleDescription="Pengembangan server, logika aplikasi, dan pengelolaan data."
               techItems={databaseTech}
               activeDomain={activeDomain}
               selectedTech={selectedTech}
@@ -155,9 +155,9 @@ export const TechGrid: React.FC<TechGridProps> = ({ onOpenProject }) => {
             <PipelineNodeLayer
               layerId="devops"
               stepNumber="04"
-              title="Data Preparation"
-              subtitle="Data Prep"
-              roleDescription="Pembersihan dan pengolahan data mentah."
+              title="Design & Tools"
+              subtitle="Workflow"
+              roleDescription="Desain, dokumentasi, manajemen proyek, dan deployment."
               techItems={devopsTech}
               activeDomain={activeDomain}
               selectedTech={selectedTech}

@@ -11,14 +11,19 @@ import {
   BarChart3
 } from 'lucide-react';
 import {
-  SiFigma,
-  SiPython,
   SiHtml5,
-  SiCss,
+  SiTailwindcss,
   SiJavascript,
   SiLaravel,
   SiMysql,
-  SiGoogleappsscript
+  SiGoogleappsscript,
+  SiGooglesheets,
+  SiFigma,
+  SiNotion,
+  SiTrello,
+  SiGithub,
+  SiVercel,
+  SiPython
 } from '@icons-pack/react-simple-icons';
 import type { TechItem, TechLayer } from '../../types/portfolio';
 import { projectsData } from '../../data/portfolioData';
@@ -28,17 +33,22 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; color?: strin
   excel: BarChart3,
   powerbi: BarChart3,
   tableau: BarChart3,
+  powerquery: BarChart3,
+  sql: BarChart3,
+  python: SiPython,
   html5: SiHtml5,
-  css: SiCss,
+  tailwindcss: SiTailwindcss,
   javascript: SiJavascript,
   laravel: SiLaravel,
   mysql: SiMysql,
   googleappsscript: SiGoogleappsscript,
+  googlesheets: SiGooglesheets,
   figma: SiFigma,
   canva: BarChart3,
-  powerquery: BarChart3,
-  sql: BarChart3,
-  python: SiPython
+  notion: SiNotion,
+  trello: SiTrello,
+  github: SiGithub,
+  vercel: SiVercel
 };
 
 interface PipelineInspectorProps {
@@ -61,51 +71,51 @@ const layerDetailsMap: Record<
 > = {
   client: {
     title: 'Data Visualization',
-    subtitle: 'Dashboard & Reporting',
+    subtitle: 'Analysis & Reporting',
     description:
-      'Menyajikan data dalam grafik dan dashboard interaktif agar tren dan insight mudah dibaca.',
+      'Membersihkan dan mengolah data, lalu menyajikannya dalam grafik dan dashboard interaktif agar tren dan insight mudah dibaca.',
     guarantees: [
+      'Pembersihan dan persiapan data',
       'Dashboard interaktif dengan filter',
-      'Visualisasi tren dan perbandingan data',
       'Penyajian insight yang mudah dipahami'
     ],
     role: 'Data Visualization'
   },
   backend: {
-    title: 'Fullstack',
-    subtitle: 'Web Application',
+    title: 'Frontend & Web',
+    subtitle: 'Web Interface',
     description:
-      'Membangun aplikasi web dari antarmuka hingga logika dan penyimpanan data di sisi server.',
+      'Membangun antarmuka web yang rapi dan responsif dengan HTML, Tailwind CSS, dan JavaScript.',
     guarantees: [
-      'Struktur dan tampilan halaman web',
-      'Logika aplikasi di sisi server',
-      'Penyimpanan dan pengelolaan data'
+      'Struktur halaman yang semantik',
+      'Styling responsif dengan Tailwind CSS',
+      'Interaktivitas di sisi browser'
     ],
-    role: 'Fullstack Development'
+    role: 'Frontend & Web'
   },
   database: {
-    title: 'Design',
-    subtitle: 'UI/UX & Visual',
+    title: 'Backend & DB',
+    subtitle: 'Server & Data',
     description:
-      'Merancang tampilan dan pengalaman pengguna dengan Figma, serta materi visual dengan Canva.',
+      'Mengembangkan logika server dan mengelola penyimpanan data dengan Laravel, MySQL, Google Apps Script, dan Google Sheets.',
     guarantees: [
-      'Perancangan antarmuka (UI/UX)',
-      'Desain visual yang konsisten',
-      'Materi visual untuk presentasi dan konten'
+      'Logika aplikasi di sisi server',
+      'Penyimpanan dan pengelolaan data',
+      'Otomasi alur data dengan script'
     ],
-    role: 'UI/UX & Visual Design'
+    role: 'Backend & Database'
   },
   devops: {
-    title: 'Data Preparation',
-    subtitle: 'Cleaning & Querying',
+    title: 'Design & Tools',
+    subtitle: 'Design & Workflow',
     description:
-      'Membersihkan, mengubah, dan memvalidasi data mentah dengan Power Query, SQL, dan Python sebelum dianalisis.',
+      'Merancang tampilan dengan Figma dan Canva, serta mendukung alur kerja lewat dokumentasi, manajemen proyek, version control, dan deployment.',
     guarantees: [
-      'Pembersihan data (data cleaning)',
-      'Query data dengan SQL',
-      'Validasi kualitas data sebelum analisis'
+      'Perancangan antarmuka (UI/UX) dan materi visual',
+      'Dokumentasi dan manajemen proyek',
+      'Version control dan deployment'
     ],
-    role: 'Data Preparation'
+    role: 'Design & Tools'
   }
 };
 

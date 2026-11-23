@@ -33,21 +33,21 @@ export const PipelineFlowPresets: React.FC<PipelineFlowPresetsProps> = ({
     },
     {
       id: 'mobile',
-      label: 'Fullstack',
+      label: 'Frontend & Web',
       icon: Smartphone,
       tag: 'Web'
     },
     {
       id: 'backend',
-      label: 'Design',
+      label: 'Backend & DB',
       icon: Server,
-      tag: 'Design'
+      tag: 'Backend'
     },
     {
       id: 'devops',
-      label: 'Data Preparation',
+      label: 'Design & Tools',
       icon: Terminal,
-      tag: 'Prep'
+      tag: 'Tools'
     },
     {
       id: 'cybersecurity',

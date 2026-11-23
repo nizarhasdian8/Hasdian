@@ -2,14 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { BarChart3 } from 'lucide-react';
 import {
-  SiFigma,
-  SiPython,
   SiHtml5,
-  SiCss,
+  SiTailwindcss,
   SiJavascript,
   SiLaravel,
   SiMysql,
-  SiGoogleappsscript
+  SiGoogleappsscript,
+  SiGooglesheets,
+  SiFigma,
+  SiNotion,
+  SiTrello,
+  SiGithub,
+  SiVercel,
+  SiPython
 } from '@icons-pack/react-simple-icons';
 import type { TechItem, TechLayer } from '../../types/portfolio';
 import type { FlowDomainId } from './PipelineFlowPresets';
@@ -18,17 +23,22 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; color?: strin
   excel: BarChart3,
   powerbi: BarChart3,
   tableau: BarChart3,
+  powerquery: BarChart3,
+  sql: BarChart3,
+  python: SiPython,
   html5: SiHtml5,
-  css: SiCss,
+  tailwindcss: SiTailwindcss,
   javascript: SiJavascript,
   laravel: SiLaravel,
   mysql: SiMysql,
   googleappsscript: SiGoogleappsscript,
+  googlesheets: SiGooglesheets,
   figma: SiFigma,
   canva: BarChart3,
-  powerquery: BarChart3,
-  sql: BarChart3,
-  python: SiPython
+  notion: SiNotion,
+  trello: SiTrello,
+  github: SiGithub,
+  vercel: SiVercel
 };
 
 interface PipelineNodeLayerProps {
