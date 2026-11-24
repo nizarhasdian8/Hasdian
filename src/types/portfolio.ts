@@ -1,10 +1,10 @@
-export type ProjectCategory = 'all' | 'fullstack' | 'mobile';
+export type ProjectCategory = 'all' | 'excel' | 'powerbi' | 'tableau';
 
 export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  category: 'fullstack' | 'mobile';
+  category: 'excel' | 'powerbi' | 'tableau';
   summary: string;
   description: string;
   architecture: string[];
@@ -22,6 +22,10 @@ export interface Project {
   imageFit?: 'cover' | 'contain';
   featured: boolean;
   metrics: { label: string; value: string }[];
+  toolLabel?: string;
+  modalTag?: string;
+  frameLabel?: string;
+  frameBadge?: string;
 }
 
 export type TechLayer = 'client' | 'backend' | 'database' | 'devops';

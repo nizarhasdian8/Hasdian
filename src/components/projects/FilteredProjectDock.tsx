@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowUpRight,
-  Lock,
+  User,
   ExternalLink,
   ChevronRight,
   BookOpen
@@ -24,21 +24,33 @@ export const FilteredProjectDock: React.FC<FilteredProjectDockProps> = ({
   onSelectCategory,
   onSelectProject
 }) => {
-  const [activeProjectId, setActiveProjectId] = useState<string>(projects[0]?.id || 'cimart');
+  const [activeProjectId, setActiveProjectId] = useState<string>(projects[0]?.id || '');
 
   const categories: { id: ProjectCategory; label: string; count: number }[] = [
     { id: 'all', label: 'Semua Proyek', count: projects.length },
     {
-      id: 'fullstack',
-      label: 'Full-Stack Web',
-      count: projects.filter((p) => p.category === 'fullstack').length
+      id: 'excel',
+      label: 'Excel Dashboard',
+      count: projects.filter((p) => p.category === 'excel').length
     },
     {
-      id: 'mobile',
-      label: 'Aplikasi Mobile',
-      count: projects.filter((p) => p.category === 'mobile').length
+      id: 'powerbi',
+      label: 'Power BI Dashboard',
+      count: projects.filter((p) => p.category === 'powerbi').length
+    },
+    {
+      id: 'tableau',
+      label: 'Tableau Dashboard',
+      count: projects.filter((p) => p.category === 'tableau').length
     }
   ];
+
+  const shortLabels: Record<ProjectCategory, string> = {
+    all: 'Semua',
+    excel: 'Excel',
+    powerbi: 'Power BI',
+    tableau: 'Tableau'
+  };
 
   const filteredProjects =
     selectedCategory === 'all'
@@ -67,10 +79,9 @@ export const FilteredProjectDock: React.FC<FilteredProjectDockProps> = ({
           </div>
 
           {/* category selection */}
-          <div className="grid grid-cols-3 sm:flex sm:items-center gap-1.5 sm:gap-2 w-full sm:w-auto">
+          <div className="grid grid-cols-4 sm:flex sm:items-center gap-1 sm:gap-2 w-full sm:w-auto">
             {categories.map((cat) => {
-              const shortLabel =
-                cat.id === 'all' ? 'Semua' : cat.id === 'fullstack' ? 'Web' : 'Mobile';
+              const shortLabel = shortLabels[cat.id] || cat.label;
 
               return (
                 <button
@@ -82,7 +93,7 @@ export const FilteredProjectDock: React.FC<FilteredProjectDockProps> = ({
                       cat.id === 'all' ? projects : projects.filter((p) => p.category === cat.id);
                     if (nextFiltered[0]) setActiveProjectId(nextFiltered[0].id);
                   }}
-                  className={`flex items-center justify-center gap-1.5 px-2 py-2 sm:px-3.5 sm:py-1.5 rounded-xl sm:rounded-2xl text-[11px] sm:text-xs font-mono font-black transition-all cursor-pointer border-2 border-[#0f172a] w-full sm:w-auto shrink-0 ${
+                  className={`flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 py-1.5 sm:px-3.5 sm:py-1.5 rounded-xl sm:rounded-2xl text-[10px] sm:text-xs font-mono font-black transition-all cursor-pointer border-2 border-[#0f172a] w-full sm:w-auto shrink-0 ${
                     selectedCategory === cat.id
                       ? 'bg-[#0284c7] text-white shadow-[2px_2px_0px_#0f172a] sm:shadow-[3px_3px_0px_#0f172a] -translate-y-0.5'
                       : 'bg-[#fffdf5] hover:bg-[#fff9d4] text-[#0f172a] shadow-[1.5px_1.5px_0px_#0f172a] sm:shadow-[2px_2px_0px_#0f172a]'
@@ -124,7 +135,7 @@ export const FilteredProjectDock: React.FC<FilteredProjectDockProps> = ({
                 </span>
                 <span>{project.title}</span>
                 {project.isPrivateRepo ? (
-                  <Lock className="w-3 h-3 text-[#b91c1c]" />
+                  <User className="w-3 h-3 text-[#166534]" />
                 ) : (
                   <ExternalLink className="w-3 h-3 text-[#15803d]" />
                 )}
@@ -158,19 +169,15 @@ export const FilteredProjectDock: React.FC<FilteredProjectDockProps> = ({
                       0{idx + 1}
                     </span>
                     <span className="text-[11px] font-mono font-bold text-[#0284c7]">
-                      {project.category === 'fullstack'
-                        ? 'Full-Stack Web'
-                        : project.stack.includes('Flutter')
-                        ? 'Mobile Flutter'
-                        : 'Mobile PWA'}
+                      {project.toolLabel ? `${project.toolLabel} Dashboard` : 'Dashboard'}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-1">
                     {project.isPrivateRepo ? (
-                      <span className="text-[9px] font-mono font-bold text-[#b91c1c] bg-[#fee2e2] px-1.5 py-0.5 rounded-md border border-[#b91c1c]/40 flex items-center gap-1">
-                        <Lock className="w-2.5 h-2.5" />
-                        <span>Private</span>
+                      <span className="text-[9px] font-mono font-bold text-[#166534] bg-[#dcfce7] px-1.5 py-0.5 rounded-md border border-[#166534]/40 flex items-center gap-1">
+                        <User className="w-2.5 h-2.5" />
+                        <span>Personal</span>
                       </span>
                     ) : (
                       <span className="text-[9px] font-mono font-bold text-[#15803d] bg-[#dcfce7] px-1.5 py-0.5 rounded-md border border-[#16a34a]/40 flex items-center gap-1">
@@ -219,7 +226,6 @@ export const FilteredProjectDock: React.FC<FilteredProjectDockProps> = ({
               <div className="space-y-2 sm:space-y-2">
                 <ProjectPreviewPlaceholder
                   project={activeProject}
-                  isMobileFrame={activeProject.category === 'mobile'}
                   className="h-[210px] min-[400px]:h-[235px] sm:h-auto sm:aspect-[16/9] sm:max-h-[220px] lg:max-h-none w-full"
                 />
 
@@ -234,7 +240,7 @@ export const FilteredProjectDock: React.FC<FilteredProjectDockProps> = ({
                     </span>
                   </div>
                   <p className="text-[10px] sm:text-[11px] font-mono font-bold text-[#8c6239] mt-0.5 line-clamp-1">
-                    {activeProject.subtitle}
+                    {activeProject.subtitle || '\u00A0'}
                   </p>
                 </div>
 

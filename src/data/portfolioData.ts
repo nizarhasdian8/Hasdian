@@ -230,134 +230,110 @@ export const techStackData: TechItem[] = [
 
 export const projectsData: Project[] = [
   {
-    id: 'cimart',
-    title: 'CiMart (CibendaMart)',
-    subtitle: 'Rural E-Commerce Platform for Desa Cibenda, Pangandaran',
-    category: 'fullstack',
-    summary: 'Platform e-commerce desa yang dibangun atas permintaan Wakil Rektor & Prodi untuk memberdayakan transaksi komoditas sembako, hasil tani, ternak, ikan, dan UMKM warga Desa Cibenda.',
-    description: 'Proyek inisiatif digitalisasi desa yang dimandatkan langsung oleh pimpinan kampus bekerjasama dengan perangkat Desa Cibenda. Platform ini menjembatani produsen desa langsung dengan pembeli regional melalui integrasi peta dan pembayaran terotomatisasi.',
+    id: 'sales-excel',
+    title: 'Sales Analytics Dashboard',
+    subtitle: '',
+    category: 'excel',
+    summary:
+      'Dashboard interaktif di Excel untuk memantau penjualan dan margin keuntungan periode 2014–2017, dengan analisis per segmen, 10 produk teratas, serta filter tahun, region, state, dan segmen.',
+    description:
+      'Dashboard penjualan interaktif di Microsoft Excel untuk periode 2014–2017. Total penjualan mencapai $2,30 juta dengan profit $286 ribu (margin 12,47%) dari 37.873 unit. Penjualan tumbuh kuat (+29,5% di 2016 dan +20,4% di 2017), tetapi margin 2017 turun ke 12,7% dari 13,4% di 2016, sehingga pertumbuhan penjualan belum diikuti pertumbuhan profit.',
     architecture: [
-      'Backend monolitik Laravel dengan routing frontend React TypeScript via Inertia.js',
-      'WebSockets untuk sinkronisasi pesanan dan status transaksi real-time',
-      'Firebase Cloud Messaging (FCM) untuk push notification otomatis',
-      'Integrasi Leaflet / OpenStreetMap untuk pemetaan titik pengantaran desa',
-      'Payment gateway Midtrans otomatis dengan otentikasi Google OAuth',
-      'Containerisasi Docker untuk memastikan reliabilitas deployment antar server'
+      'Penjualan sangat musiman: September, November, dan Desember menyumbang sekitar 43% dari total penjualan (307 rb, 352 rb, 325 rb), dan pola ini muncul di setiap tahun.',
+      'Diskon besar menggerus profit: transaksi tanpa diskon bermargin 29,5%, sedangkan diskon di atas 20% membuat margin negatif. Transaksi diskon di atas 20% hanya 16% dari penjualan, tetapi menyebabkan kerugian sekitar 135 rb, hampir setengah dari total profit. Tanpa transaksi tersebut, margin bisa naik ke sekitar 21,8% (estimasi sederhana).',
+      'Furniture besar di penjualan, kecil di profit: 32% dari penjualan tetapi hanya 6% dari profit (margin 2,5%). Sub-kategori Tables rugi 17,7 rb dan Bookcases rugi 3,5 rb, sedangkan Technology (17,4%) dan Office Supplies (17,0%) menghasilkan hampir seluruh profit.',
+      'Produk terlaris belum tentu menguntungkan: Canon imageCLASS 2200 menjadi produk terbaik (penjualan 61,6 rb, margin 41%), tetapi dari 10 produk terlaris, 3 rugi dan 1 impas, termasuk Cisco TelePresence EX90 dan GBC DocuBind P400. Secara total ada 301 produk (16%) yang rugi.',
+      'Region Central dan beberapa state menjadi titik lemah: Central bermargin 7,9% dengan diskon rata-rata 24%, jauh di bawah West (14,9%, diskon 11%). Sebanyak 10 dari 49 state merugi (total -98 rb), terbesar Texas, Ohio, Pennsylvania, dan Illinois.',
+      'Segmen Consumer terbesar tetapi marginnya paling tipis: 50% dari penjualan dengan margin 11,6%, sedangkan Home Office (14,0%) dan Corporate (13,0%) lebih sehat.'
     ],
-    stack: [
-      'Laravel',
-      'Inertia.js',
-      'React',
-      'TypeScript',
-      'MySQL',
-      'Tailwind CSS',
-      'Docker',
-      'FCM',
-      'WebSockets',
-      'Leaflet / OSM',
-      'Midtrans',
-      'Google OAuth'
-    ],
-    highlights: [
-      'Inisiatif resmi atas penugasan Warek & Prodi Teknik Informatika',
-      'Mendukung komoditas sembako, pertanian, peternakan, perikanan, dan kerajinan',
-      'Sistem pembayaran digital instan dan pemetaan akurat level desa'
-    ],
-    challenges: 'Dikerjakan dan diarsiteki secara mandiri dari nol hingga tahap produksi karena keterbatasan anggota tim.',
-    role: 'Full-Stack Engineer',
-    demoUrl: 'https://cimart.ryhndastra.site',
-    isPrivateRepo: true,
-    privateRepoReason: 'Repository privat karena hak cipta institusi & kerahasiaan data',
+    stack: ['Pivot Table', 'Slicer', 'Data Visualization'],
+    highlights: [],
+    challenges:
+      'Keputusan yang dapat diambil:\n1. Batasi diskon maksimal sekitar 20%, karena ini langkah berdampak terbesar pada profit.\n2. Evaluasi ulang Tables, Bookcases, dan Machines lewat harga, diskon, atau penghentian varian yang rugi.\n3. Audit Central dan state yang merugi, terutama kebijakan diskon di sana.\n4. Dorong produk margin tinggi (Copiers, Paper, Accessories) menjelang September–Desember.\n5. Perbesar Corporate dan Home Office dengan paket pengadaan, karena marginnya lebih baik daripada Consumer.',
+    role: 'Data Analyst',
+    isPrivateRepo: true, // dipakai hanya untuk memunculkan label Personal Project
     imageUrl: '/projects/sales-dashboard.jpg',
     imageFit: 'contain',
     featured: true,
     metrics: [
-      { label: 'Engineering', value: 'Full-Stack Developer' },
-      { label: 'Architecture', value: 'Laravel Inertia' },
-      { label: 'Payment API', value: 'Midtrans Iris' }
-    ]
+      { label: 'FOCUS', value: 'Sales & Margin' },
+      { label: 'FILTER', value: 'Interactive Slicers' },
+      { label: 'RANKING', value: 'Top 10 Products' }
+    ],
+    toolLabel: 'Excel',
+    modalTag: 'Sales Dashboard',
+    frameLabel: 'Sales Dashboard · Excel',
+    frameBadge: 'EXCEL DASHBOARD'
   },
   {
-    id: 'villanakey',
-    title: 'villaNaKey',
-    subtitle: 'Aplikasi Mobile Booking & Manajemen Reservasi Villa Keluarga',
-    category: 'mobile',
-    summary: 'Aplikasi mobile booking khusus untuk mendukung operasional bisnis hospitality villa pribadi keluarga dengan sinkronisasi kalender real-time tanpa risiko double-booking.',
-    description: 'Dikembangkan sebagai proyek akhir kampus untuk mendigitalisasi pemesanan villa keluarga, mengeliminasi risiko double-booking, dan mempermudah pengecekan jadwal reservasi bagi pengelola dan tamu.',
+    id: 'supermarket-powerbi',
+    title: 'Supermarket Profitability Dashboard',
+    subtitle: '',
+    category: 'powerbi',
+    summary:
+      'Dashboard Power BI untuk memahami pola penjualan supermarket, mencakup performa tiap kategori, metode pembayaran, pola profit berdasarkan waktu, rating pelanggan, dan volume penjualan.',
+    description:
+      'Supermarket Sales Dashboard ini dikembangkan untuk memahami pola penjualan secara menyeluruh dan menampilkan informasi penting dalam bentuk visual yang lebih mudah diinterpretasikan.',
     architecture: [
-      'Aplikasi mobile multi-platform dibangun dengan Flutter dan Dart SDK',
-      'Firebase Authentication untuk otentikasi aman pengelola dan tamu',
-      'Cloud Firestore NoSQL real-time database untuk sinkronisasi instan jadwal reservasi',
-      'Komponen custom calendar interaktif dengan highlight tanggal booking aktif'
+      'Performa tiap kategori: Food & Beverages menjadi penyumbang revenue terbesar, diikuti Sports & Travel dan Electronic Accessories. Margin keuntungan di semua kategori berada pada tingkat yang sama, sehingga tidak ada perbedaan profit yang signifikan antarproduk.',
+      'Perilaku pembayaran: cash, e-wallet, dan kartu kredit relatif berimbang. Penggunaan e-wallet yang hampir setara dengan tunai menunjukkan pergeseran preferensi ke pembayaran digital.',
+      'Pola profit berdasarkan waktu: profit berfluktuasi sepanjang periode dengan kecenderungan naik menuju akhir kuartal, yang bisa dipengaruhi musim belanja, momentum tanggal tertentu, atau meningkatnya pembelian di akhir periode.',
+      'Penilaian pelanggan: Food & Beverages kembali menjadi kategori dengan rating tertinggi, sementara beberapa kategori lain bernilai sedikit lebih rendah, yang bisa menjadi petunjuk kualitas layanan atau preferensi pelanggan.',
+      'Volume penjualan: total barang terjual sejalan dengan kategori berrevenue tinggi, sehingga volume menjadi penggerak utama pendapatan.'
     ],
-    stack: [
-      'Flutter',
-      'Dart',
-      'Firebase Auth',
-      'Cloud Firestore',
-      'Mobile Architecture'
-    ],
-    highlights: [
-      'Digunakan langsung pada operasional villa pribadi keluarga',
-      'Sinkronisasi status booking instan tanpa latency',
-      'Kalender interaktif visual untuk kemudahan reservasi tanggal'
-    ],
-    challenges: 'Proyek aplikasi mobile pertama; mempelajari Flutter dan reaktif state management dari nol bersama kelompok di bawah tenggat waktu akademik yang ketat.',
-    role: 'Mobile Developer & Technical Lead',
-    githubUrl: 'https://github.com/ryhndastra/villanakey',
-    isMobileApp: true,
-    demoStatusLabel: 'Aplikasi Mobile Native (Demo/APK on request)',
+    stack: ['KPI', 'Trend Analysis', 'Data Visualization'],
+    highlights: [],
+    challenges:
+      'Pola penjualan, metode pembayaran, dan penilaian pelanggan saling berkaitan dan bersama-sama menggambarkan aktivitas penjualan secara keseluruhan. Visualisasi membantu mengidentifikasi tren penting dan perbedaan antar kategori produk, serta menunjukkan bagaimana data yang telah dibersihkan dan divisualisasikan dapat memberi insight yang jelas, terarah, dan mudah dipahami.',
+    role: 'Data Analyst',
+    isPrivateRepo: true, // dipakai hanya untuk memunculkan label Personal Project
     imageUrl: '/projects/supermarket-dashboard.jpg',
     imageFit: 'contain',
     featured: true,
     metrics: [
-      { label: 'Mobile Engine', value: 'Flutter & Dart' },
-      { label: 'Database Sync', value: 'Real-Time NoSQL' },
-      { label: 'State & Cloud', value: 'Firebase Suite' }
-    ]
+      { label: 'FOCUS', value: 'Profitability' },
+      { label: 'METRICS', value: 'Profit, Revenue & GPM' },
+      { label: 'INSIGHT', value: 'Rating vs Sales' }
+    ],
+    toolLabel: 'Power BI',
+    modalTag: 'Supermarket Profitability',
+    frameLabel: 'Supermarket · Power BI',
+    frameBadge: 'POWER BI DASHBOARD'
   },
   {
-    id: 'kalorin-ai',
-    title: 'kalorinAi',
-    subtitle: 'Platform Web Nutrisi & Tracking Kalori Berbasis Computer Vision AI',
-    category: 'fullstack',
-    summary: 'Platform pelacak nutrisi cerdas dengan pengenalan citra piring makanan berbasis AI untuk menghitung kalori, makronutrien, serta rekomendasi harian.',
-    description: 'Capstone Project Dicoding CodingCamp 2026 Powered by DBS Foundation yang dikembangkan bersama tim 6 orang (2 Data Analyst, 2 AI Engineer, 2 Fullstack). Fitur mencakup kalkulator BMI, tracking asupan harian, streak, insight AI, dan rekomendasi menu.',
+    id: 'flight-tableau',
+    title: 'US Flight Delay Analysis',
+    subtitle: '',
+    category: 'tableau',
+    summary:
+      'Dashboard Tableau yang memetakan keterlambatan penerbangan di Amerika Serikat periode 2017–2022, lengkap dengan persentase keterlambatan per penyebab dan peta distribusi berdasarkan maskapai.',
+    description:
+      'Dashboard US Flight Delay menampilkan data visual mengenai keterlambatan penerbangan di Amerika Serikat periode 2017–2022, meliputi total keterlambatan, persentase keterlambatan berdasarkan penyebab, pola per bulan, dan peta distribusi berdasarkan maskapai.',
     architecture: [
-      'Client web modern menggunakan React, Vite, dan Tailwind CSS v4',
-      'Database dan layer data menggunakan Supabase dan Prisma ORM',
-      'Sistem otentikasi aman menggunakan Firebase Auth',
-      'Pipeline computer vision TensorFlow/Keras di backend Python untuk mendeteksi porsi dan nilai gizi (kalori, protein, lemak, karbohidrat)',
-      'Mesin rekomendasi harian adaptif berdasarkan target kalori pengguna'
+      'Total delay: menunjukkan akumulasi waktu keterlambatan seluruh penerbangan dibandingkan jadwal kedatangan seharusnya.',
+      'Ukuran data: menggambarkan jumlah penerbangan yang dianalisis, sehingga cakupan analisis terlihat jelas dan membantu melihat apakah ada hubungan antara jumlah penerbangan dan tingkat keterlambatan.',
+      'Pola per bulan dan rentang 2017–2022: memungkinkan melihat pola keterlambatan berdasarkan musim serta perubahannya dari tahun ke tahun.',
+      'Faktor penyebab: persentase keterlambatan ditampilkan menurut arrival delay, carrier delay, late aircraft delay, NAS delay, security delay, dan weather delay, sehingga penyebab utama dapat dikenali.',
+      'Peta Amerika Serikat: menunjukkan distribusi keterlambatan berdasarkan maskapai di tiap wilayah, memberi sudut pandang geografis.'
     ],
-    stack: [
-      'React',
-      'Vite',
-      'Tailwind CSS v4',
-      'TypeScript',
-      'Supabase',
-      'Prisma ORM',
-      'Firebase Auth',
-      'TensorFlow',
-      'Python'
-    ],
-    highlights: [
-      'Capstone Project Dicoding CodingCamp 2026 Powered by DBS Foundation',
-      'Deteksi citra makanan otomatis untuk kalkulasi makronutrien instan',
-      'Sistem insight harian dan rekomendasi personal berbasis AI'
-    ],
-    challenges: 'Menggarap seluruh arsitektur web dan integrasi API secara mandiri di tengah jadwal padat antara perkuliahan semester aktif dan bootcamp.',
-    role: 'Lead Web Full-Stack Developer',
-    githubUrl: 'https://github.com/ryhndastra/kalorin-ai',
-    demoUrl: 'https://kalorin-ai.vercel.app',
+    stack: ['Geospatial Map', 'Trend Analysis', 'Data Visualization'],
+    highlights: [],
+    challenges:
+      'Dashboard ini menyajikan gambaran menyeluruh keterlambatan penerbangan di Amerika Serikat, mulai dari total waktu keterlambatan dan penyebab utamanya hingga persebaran geografisnya. Informasi tersebut dapat dipakai untuk menentukan faktor penyebab dan wilayah yang perlu diprioritaskan dalam penanganan keterlambatan.',
+    role: 'Data Analyst',
+    isPrivateRepo: true, // dipakai hanya untuk memunculkan label Personal Project
     imageUrl: '/projects/flight-delay-dashboard.jpg',
     imageFit: 'contain',
     featured: true,
     metrics: [
-      { label: 'Capstone Team', value: '6 Engineers' },
-      { label: 'AI Inference', value: 'TensorFlow CNN' },
-      { label: 'Web Platform', value: 'React & Vite' }
-    ]
+      { label: 'FOCUS', value: 'Flight Delays' },
+      { label: 'PERIOD', value: '2017–2022' },
+      { label: 'VISUAL', value: 'Geospatial Map' }
+    ],
+    toolLabel: 'Tableau',
+    modalTag: 'US Flight Delay',
+    frameLabel: 'US Flight Delay · Tableau',
+    frameBadge: 'TABLEAU DASHBOARD'
   }
 ];
 

@@ -10,15 +10,16 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) => {
   const getCategoryLabel = (p: Project) => {
-    if (p.category === 'fullstack') return 'Full-Stack Web';
-    if (p.stack.includes('Flutter')) return 'Mobile Flutter App';
-    return 'Mobile PWA App';
+    if (p.toolLabel) return `${p.toolLabel} Dashboard`;
+    if (p.category === 'excel') return 'Excel Dashboard';
+    if (p.category === 'powerbi') return 'Power BI Dashboard';
+    return 'Tableau Dashboard';
   };
 
-  const categoryAccents = {
-    fullstack: 'text-[#2563eb] border-[#2563eb]/40',
-    mobile: 'text-[#0d9488] border-[#0d9488]/40',
-    ai: 'text-[#d97706] border-[#d97706]/40'
+  const categoryAccents: Record<'excel' | 'powerbi' | 'tableau', string> = {
+    excel: 'text-[#2563eb] border-[#2563eb]/40',
+    powerbi: 'text-[#0d9488] border-[#0d9488]/40',
+    tableau: 'text-[#d97706] border-[#d97706]/40'
   };
 
   return (
