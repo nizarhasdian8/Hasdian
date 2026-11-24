@@ -8,6 +8,7 @@ export const profileData: ProfileData = {
   bio: 'Informatics engineering undergraduate focused on building end-to-end web platforms and mobile applications with resilient architecture, clean code, and Linux-driven workflows.',
   experienceStart: 'Active Developer',
   avatarUrl: '/avatar.svg',
+  photoUrl: '/Foto%20Full.jpg',
   interests: [
     'Web Architecture',
     'Mobile Systems',

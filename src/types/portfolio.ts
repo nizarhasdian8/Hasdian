@@ -63,6 +63,7 @@ export interface ProfileData {
   bio: string;
   experienceStart: string;
   avatarUrl: string;
+  photoUrl?: string;
   interests: string[];
   contact: {
     email: string;
