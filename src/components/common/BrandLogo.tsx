@@ -26,7 +26,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <div className={`inline-flex items-center gap-2.5 ${className}`}>
       <div className="relative flex items-center justify-center transition-transform group-hover:scale-105 select-none">
         <img
-          src="/ryhndastra.png"
+          src="/logo-nh.png"
           alt="Muhammad Nizar Hasdian Logo"
           className={`${currentSize.img} object-contain drop-shadow-md`}
           loading="eager"
